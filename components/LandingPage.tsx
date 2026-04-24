@@ -1,7 +1,25 @@
 import React from 'react';
 import Image from 'next/image';
-import { Mail, MapPin, Smartphone, FileText, ShieldCheck, CalendarCheck, CheckCircle, Camera } from 'lucide-react';
-import Button from './Button';
+import { Mail, MapPin, Smartphone, FileText, ShieldCheck, CalendarCheck, CheckCircle, Video } from 'lucide-react';
+
+const InstagramIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <path d="M16 11.37a4 4 0 1 1-7.37 2.63 4 4 0 0 1 7.37-2.63" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+    </svg>
+  );
+};
 
 const ServiceCard = ({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) => {
   return (
@@ -32,7 +50,7 @@ const LandingPage: React.FC = () => {
         <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
           <div>
             <Image
-              src="/logo assistance numerique.png"
+              src="/logo.png"
               alt="Logo Virginie Assistance Numérique"
               width={220}
               height={220}
@@ -67,16 +85,26 @@ const LandingPage: React.FC = () => {
                 href="https://instagram.com/virginie_assistance_numerique"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#102A4C] px-8 py-4 text-center font-semibold text-[#102A4C] transition hover:bg-[#F8DFE1]"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#102A4C] px-8 py-4 text-center font-semibold text-[#102A4C] transition hover:bg-[#F8DFE1]"
               >
+                <InstagramIcon className="h-5 w-5" />
                 Voir mon Instagram
               </a>
             </div>
 
             <div className="mt-6 space-y-2 text-sm text-slate-600">
-              <p>📍 La Rochelle et alentours — à domicile ou à distance</p>
-              <p>📸 @virginie_assistance_numerique</p>
-              <p>📩 virginie.assistancenumerique@gmail.com</p>
+              <p className="flex items-center gap-2">
+                <MapPin className="h-4 w-4 text-[#C75B6B]" />
+                <span>La Rochelle et alentours — à domicile ou à distance</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <InstagramIcon className="h-4 w-4 text-[#C75B6B]" />
+                <span>@virginie_assistance_numerique</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-[#C75B6B]" />
+                <span>virginie.assistancenumerique@gmail.com</span>
+              </p>
             </div>
           </div>
 
@@ -96,7 +124,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="bg-white px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="text-4xl font-bold text-bleu-marine mb-4">
             Mes Services
@@ -140,7 +168,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-20 bg-rose-clair">
+      <section id="about" className="bg-rose-clair px-6 py-14 md:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -168,19 +196,19 @@ const LandingPage: React.FC = () => {
                 <Benefit text="À domicile ou à distance" />
                 <Benefit text="Confidentialité et respect" />
               </div>
-              <Button 
+              <a
                 href="#contact"
-                className="bg-rose-principal hover:bg-rose-principal/90 text-white"
+                className="inline-flex items-center justify-center rounded-full bg-[#C75B6B] px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-[#A84A58]"
               >
                 Discutons ensemble
-              </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="py-20 bg-white">
+      <section id="pricing" className="bg-white px-6 py-14 md:py-20">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-4xl font-bold text-bleu-marine mb-4">
             Tarifs simples et transparents
@@ -203,12 +231,12 @@ const LandingPage: React.FC = () => {
                 <Benefit text="Plan d&apos;action" />
                 <Benefit text="Suivi personnalisé" />
               </ul>
-              <Button 
+              <a
                 href="#contact"
-                className="w-full bg-rose-principal hover:bg-rose-principal/90 text-white"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#C75B6B] px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-[#A84A58]"
               >
                 Réserver ma séance
-              </Button>
+              </a>
             </div>
             <div className="rounded-2xl bg-gradient-to-br from-bleu-marine to-white p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-white mb-4">
@@ -225,19 +253,19 @@ const LandingPage: React.FC = () => {
                 <Benefit text="Documents personnalisés" light />
                 <Benefit text="Progressif régulier" light />
               </ul>
-              <Button 
+              <a
                 href="#contact"
-                className="w-full bg-white hover:bg-white/90 text-bleu-marine"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 font-semibold text-[#102A4C] shadow-lg transition hover:bg-white/90"
               >
                 Choisir le pack
-              </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* LOCATION */}
-      <section id="location" className="py-20 bg-rose-clair">
+      <section id="location" className="bg-rose-clair px-6 py-14 md:py-20">
         <div className="mx-auto max-w-5xl text-center">
           <h2 className="text-4xl font-bold text-bleu-marine mb-4">
             Ma zone d&apos;intervention
@@ -254,7 +282,7 @@ const LandingPage: React.FC = () => {
               </p>
             </div>
             <div className="text-center">
-              <Camera className="w-12 h-12 text-rose-principal mx-auto mb-4" />
+              <Video className="w-12 h-12 text-rose-principal mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-bleu-marine">À distance</h3>
               <p className="text-foreground/80">
                 Accompagnement par visioconférence partout en France
@@ -265,10 +293,10 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#102A4C] px-6 py-20 text-white">
+      <section id="contact" className="bg-[#102A4C] px-6 py-16 text-white md:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Image
-            src="/logo assistance numerique.png"
+            src="/logo.png"
             alt="Logo Virginie Assistance Numérique"
             width={160}
             height={160}
@@ -302,6 +330,51 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <footer className="bg-[#102A4C] px-6 pb-10 text-white">
+        <div className="mx-auto max-w-6xl border-t border-white/15 pt-10">
+          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
+            <div className="flex flex-col items-center gap-4 md:flex-row md:items-center">
+              <Image
+                src="/logo.png"
+                alt="Logo Virginie Assistance Numérique"
+                width={72}
+                height={72}
+                className="h-auto w-16"
+              />
+              <div>
+                <p className="text-lg font-semibold">
+                  <span className="font-script text-2xl font-normal">Virginie</span> Assistance Numérique
+                </p>
+                <p className="text-sm text-white/80">Le numérique en toute sérénité</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2 text-sm text-white/90">
+              <a
+                href="mailto:virginie.assistancenumerique@gmail.com"
+                className="inline-flex items-center justify-center gap-2 underline-offset-4 hover:underline md:justify-start"
+              >
+                <Mail className="h-4 w-4" />
+                <span>virginie.assistancenumerique@gmail.com</span>
+              </a>
+              <a
+                href="https://instagram.com/virginie_assistance_numerique"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 underline-offset-4 hover:underline md:justify-start"
+              >
+                <InstagramIcon className="h-4 w-4" />
+                <span>@virginie_assistance_numerique</span>
+              </a>
+            </div>
+          </div>
+
+          <p className="mt-8 text-center text-xs text-white/60">
+            {new Date().getFullYear()} Virginie Assistance Numérique. Tous droits réservés.
+          </p>
+        </div>
+      </footer>
     </main>
   );
 };
