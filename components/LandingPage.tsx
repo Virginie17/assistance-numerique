@@ -1,382 +1,300 @@
-import React from 'react';
+import { Cormorant_Garamond, Inter, Parisienne } from 'next/font/google';
 import Image from 'next/image';
-import { Mail, MapPin, Smartphone, FileText, ShieldCheck, CalendarCheck, CheckCircle, Video } from 'lucide-react';
+import { Heart, MapPin, Menu } from 'lucide-react';
 
-const InstagramIcon = ({ className }: { className?: string }) => {
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  variable: '--font-inter',
+});
+
+const parisienne = Parisienne({
+  subsets: ['latin'],
+  weight: ['400'],
+  variable: '--font-script',
+});
+
+const services = [
+  {
+    icon: '📱',
+    title: 'Smartphone & tablette',
+    text: "Prise en main, réglages, applications, photos, contacts, WhatsApp... Je vous accompagne pas à pas pour vous sentir à l'aise avec votre appareil.",
+  },
+  {
+    icon: '📋',
+    title: 'Démarches administratives en ligne',
+    text: 'Impôts, CAF, Ameli, retraite, carte grise, permis de conduire... Je vous guide étape par étape pour toutes vos démarches numériques.',
+  },
+  {
+    icon: '💻',
+    title: 'Ordinateur & emails',
+    text: "Configuration, utilisation, messagerie, photos, documents... On avance ensemble à votre rythme, sans pression.",
+  },
+  {
+    icon: '🔐',
+    title: 'Sécurité & arnaques',
+    text: 'Reconnaissance des arnaques par email, téléphone ou SMS. Mots de passe sécurisés, bonnes pratiques pour naviguer sereinement.',
+  },
+  {
+    icon: '🎓',
+    title: 'Formation & autonomie',
+    text: 'Mon objectif : vous rendre autonome ! Apprentissage des outils numériques du quotidien selon vos besoins, à votre rythme.',
+  },
+  {
+    icon: '🏠',
+    title: 'À domicile ou à distance',
+    text: "Je me déplace chez vous à La Rochelle et dans un rayon de 20 km, ou j'interviens par écran partagé depuis votre canapé.",
+  },
+];
+
+const faqs = [
+  'Faut-il être « doué » en informatique pour faire appel à vous ?',
+  'Venez-vous vraiment à domicile ?',
+  'Combien ça coûte ?',
+  'Que puis-je vous demander exactement ?',
+  'Comment se passe une session à distance ?',
+  'Puis-je vous appeler en urgence ?',
+];
+
+const FlowerSprig = ({ className }: { className?: string }) => {
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox="0 0 120 220"
       fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      xmlns="http://www.w3.org/2000/svg"
       className={className}
       aria-hidden="true"
     >
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <path d="M16 11.37a4 4 0 1 1-7.37 2.63 4 4 0 0 1 7.37-2.63" />
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+      <path
+        d="M62 210C62 165 56 140 46 120C35 97 24 80 18 60C13 43 17 28 31 20"
+        stroke="#C75B6B"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <path
+        d="M38 68C24 62 14 52 8 40C20 41 32 45 44 54"
+        stroke="#C75B6B"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M48 98C33 96 20 88 10 76C23 75 38 78 54 86"
+        stroke="#C75B6B"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M56 132C41 134 26 129 14 118C27 113 43 112 60 116"
+        stroke="#C75B6B"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M70 116C86 116 100 110 112 98C98 94 82 94 66 98"
+        stroke="#C75B6B"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M64 78C82 78 96 70 108 58C94 55 78 56 60 62"
+        stroke="#C75B6B"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="84" cy="30" r="10" fill="#F8DFE1" stroke="#C75B6B" strokeWidth="4" />
+      <circle cx="102" cy="46" r="8" fill="#F8DFE1" stroke="#C75B6B" strokeWidth="4" />
     </svg>
   );
 };
 
-const ServiceCard = ({ icon, title, text }: { icon: React.ReactNode; title: string; text: string }) => {
+export default function VirginieAssistancePage() {
   return (
-    <div className="rounded-3xl bg-white p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-      <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-rose-principal text-white">
-        {icon}
-      </div>
-      <h3 className="text-xl font-bold text-bleu-marine">{title}</h3>
-      <p className="text-foreground/80">{text}</p>
-    </div>
-  );
-};
+    <main className={`${cormorant.variable} ${inter.variable} ${parisienne.variable} min-h-screen bg-[#faf5f6] text-[#39292f]`}>
+      <header className="sticky top-0 z-50 bg-white/96 border-b border-[#eadde1] shadow-[0_2px_10px_rgba(76,45,55,0.06)]">
+        <div className="mx-auto flex h-[92px] max-w-[430px] items-center justify-between px-[30px]">
+          <div className="flex items-center gap-[18px]">
+            <div className="relative h-[52px] w-[52px] overflow-hidden rounded-full border border-[#e4c9d2] bg-white shadow-sm">
+              <Image src="/logo.png" alt="Logo Virginie Assistance Numérique" fill className="object-contain p-1" priority />
+            </div>
+            <div className="leading-none">
+              <div className="font-[var(--font-script)] text-[31px] leading-[0.85] text-[#b75f7a]">Virginie</div>
+              <div className="mt-[8px] font-[var(--font-inter)] text-[13px] font-light uppercase tracking-[0.24em] text-[#77666b]">
+                Assistance Numérique
+              </div>
+            </div>
+          </div>
+          <button aria-label="Menu" className="text-[#422e35]">
+            <Menu size={34} strokeWidth={2.3} />
+          </button>
+        </div>
+      </header>
 
-const Benefit = ({ text, light = false }: { text: string; light?: boolean }) => {
-  return (
-    <div className={`flex items-start gap-3 ${light ? 'text-white/80' : 'text-foreground/80'}`}>
-      <CheckCircle className={`w-5 h-5 ${light ? 'text-white' : 'text-rose-principal'} flex-shrink-0 mt-0.5`} />
-      <span className={light ? 'text-white' : 'text-foreground/80'}>{text}</span>
-    </div>
-  );
-};
+      <section className="mx-auto max-w-[430px] overflow-hidden bg-[#fbf6f7]">
+        <div className="relative px-[30px] pb-[44px] pt-[38px]">
+          <div className="pointer-events-none absolute left-1/2 top-[82px] h-[490px] w-[490px] -translate-x-1/2 rounded-full border border-[#ead2da]/70" />
+          <div className="pointer-events-none absolute left-1/2 top-[112px] h-[430px] w-[430px] -translate-x-1/2 rounded-full border border-[#ead2da]/50" />
+          <div className="pointer-events-none absolute left-1/2 top-[142px] h-[370px] w-[370px] -translate-x-1/2 rounded-full border border-[#ead2da]/40" />
 
-const LandingPage: React.FC = () => {
-  return (
-    <main className="min-h-screen bg-[#FFF8F4]">
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-[#FFF8F4] px-6 py-16">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
-          <div>
+          <div className="relative mx-auto mt-[48px] h-[315px] w-[315px] overflow-hidden rounded-full border-[7px] border-white bg-[#eadde1] shadow-[0_16px_42px_rgba(72,45,55,0.12)]">
             <Image
-              src="/logo.png"
-              alt="Logo Virginie Assistance Numérique"
-              width={220}
-              height={220}
-              className="mb-6"
+              src="/virginie.webp"
+              alt="Virginie assistante numérique"
+              fill
+              sizes="315px"
+              className="object-cover"
               priority
             />
+            <FlowerSprig className="pointer-events-none absolute -right-[46px] bottom-[12px] h-[170px] w-[92px] text-[#C75B6B] opacity-90" />
+          </div>
 
-            <p className="mb-4 inline-flex rounded-full bg-[#F8DFE1] px-4 py-2 text-sm font-semibold text-[#C75B6B]">
-              Assistance numérique à La Rochelle &amp; à distance
-            </p>
-
-            <h1 className="text-4xl font-bold leading-tight text-[#102A4C] md:text-6xl">
-              Besoin d’aide avec le{' '}
-              <span className="text-[#C75B6B]">numérique ?</span>
-            </h1>
-
-            <p className="mt-4 text-xl font-medium text-[#C75B6B]">Le numérique en toute sérénité</p>
-
-            <p className="mt-6 text-lg leading-relaxed text-slate-700">
-              J’accompagne les seniors et les personnes en difficulté avec le numérique pour les aider dans leurs démarches administratives, leurs outils du quotidien et leur autonomie.
-            </p>
-
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="mailto:virginie.assistancenumerique@gmail.com"
-                className="rounded-full bg-[#C75B6B] px-8 py-4 text-center font-semibold text-white shadow-lg transition hover:bg-[#A84A58]"
-              >
-                Me contacter
-              </a>
-
-              <a
-                href="https://instagram.com/virginie_assistance_numerique"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-[#102A4C] px-8 py-4 text-center font-semibold text-[#102A4C] transition hover:bg-[#F8DFE1]"
-              >
-                <InstagramIcon className="h-5 w-5" />
-                Voir mon Instagram
-              </a>
-            </div>
-
-            <div className="mt-6 space-y-2 text-sm text-slate-600">
-              <p className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-[#C75B6B]" />
-                <span>La Rochelle et alentours — à domicile ou à distance</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <InstagramIcon className="h-4 w-4 text-[#C75B6B]" />
-                <span>@virginie_assistance_numerique</span>
-              </p>
-              <p className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-[#C75B6B]" />
-                <span>virginie.assistancenumerique@gmail.com</span>
-              </p>
+          <div className="relative z-10 mx-auto -mt-[24px] w-[318px] rounded-[20px] border border-[#eadde1] bg-white px-4 py-[17px] text-center shadow-[0_12px_22px_rgba(75,49,58,0.13)]">
+            <div className="font-[var(--font-script)] text-[28px] leading-none text-[#b75f7a]">Virginie</div>
+            <div className="mt-[8px] font-[var(--font-inter)] text-[12px] font-light uppercase tracking-[0.22em] text-[#9a8c91]">
+              Assistance Numérique · La Rochelle
             </div>
           </div>
 
-          <div className="relative">
-            <div className="rounded-[2rem] bg-white p-4 shadow-2xl">
-              <Image
-                src="/virginie.webp"
-                alt="Virginie assistante numérique à La Rochelle"
-                width={600}
-                height={700}
-                className="rounded-[1.5rem] object-cover"
-                priority
-              />
-            </div>
+          <div className="mt-[42px] inline-flex items-center gap-[14px] rounded-full border border-[#e3cbd3] bg-[#fbf7f8] px-[22px] py-[14px] font-[var(--font-inter)] text-[18px] font-light text-[#b4637e] shadow-sm">
+            <MapPin size={23} strokeWidth={1.9} />
+            <span>La Rochelle & alentours (20 km)</span>
           </div>
-        </div>
-      </section>
 
-      {/* SERVICES */}
-      <section id="services" className="bg-white px-6 py-14 md:py-20">
-        <div className="mx-auto max-w-6xl text-center">
-          <h2 className="text-4xl font-bold text-bleu-marine mb-4">
-            Mes Services
-          </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            Je vous accompagne avec patience et bienveillance dans toutes vos démarches numériques
+          <div className="mt-[64px] font-[var(--font-script)] text-[34px] leading-none text-[#c17a94]">La sérénité numérique</div>
+          <h1 className="mt-[26px] font-[var(--font-cormorant)] text-[52px] font-medium leading-[1.08] tracking-[-0.02em] text-[#37272e]">
+            Un accompagnement <span className="block italic text-[#b65675]">doux et patient</span>
+            <span className="block">pour votre quotidien</span>
+            <span className="block">numérique</span>
+          </h1>
+
+          <p className="mt-[34px] font-[var(--font-inter)] text-[22px] font-light leading-[1.75] text-[#8f8186]">
+            Seniors, particuliers, personnes en difficulté numérique — je viens à votre domicile ou je vous accompagne à distance, à votre rythme, sans jargon et sans jugement.
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-            <ServiceCard
-              icon={<FileText />}
-              title="Démarches administratives"
-              text="CAF, Impôts, Ameli, Retraite, France Travail, documents en ligne"
-            />
-            <ServiceCard
-              icon={<Smartphone />}
-              title="Smartphone & tablette"
-              text="Prise en main, réglages, applications, sécurité et utilisation quotidienne"
-            />
-            <ServiceCard
-              icon={<Mail />}
-              title="Mails & courriers"
-              text="Création d&apos;adresse mail, gestion des messages, pièces jointes"
-            />
-            <ServiceCard
-              icon={<MapPin />}
-              title="Ordinateur & internet"
-              text="Navigation, recherches, Wi-Fi, sécurité, utilisation simple"
-            />
-            <ServiceCard
-              icon={<CalendarCheck />}
-              title="Rendez-vous en ligne"
-              text="Prise de rendez-vous, téléconsultations, visioconférences"
-            />
-            <ServiceCard
-              icon={<ShieldCheck />}
-              title="Sécurité & conseils"
-              text="Arnaques, mots de passe, confidentialité et bonnes pratiques"
-            />
+
+          <div className="mt-[46px] space-y-[18px]">
+            <button className="flex h-[58px] w-full items-center justify-center gap-[18px] rounded-full bg-[#c47b96] font-[var(--font-inter)] text-[19px] font-light text-white shadow-[0_12px_22px_rgba(176,95,122,0.22)]">
+              <Heart size={25} strokeWidth={1.8} />
+              Demander un accompagnement
+            </button>
+            <button className="flex h-[58px] w-full items-center justify-center gap-[18px] rounded-full border border-[#e2ccd3] bg-white/70 font-[var(--font-inter)] text-[19px] font-light text-[#ad5f79] shadow-sm">
+              <Heart size={28} strokeWidth={1.8} />
+              Découvrir mes services
+            </button>
+          </div>
+
+          <div className="mt-[50px] grid grid-cols-2 gap-x-5 gap-y-[24px] font-[var(--font-inter)] text-[16px] font-light text-[#ad9ca2]">
+            <div>♡ Patience & écoute</div>
+            <div>·</div>
+            <div>♡ À domicile ou à distance</div>
+            <div>♡ Devis gratuit</div>
           </div>
         </div>
-      </section>
 
-      {/* ABOUT */}
-      <section id="about" className="bg-rose-clair px-6 py-14 md:py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <Image
-                src="/virginie.webp"
-                alt="Portrait de Virginie"
-                width={500}
-                height={500}
-                className="rounded-2xl object-cover shadow-xl"
-              />
-            </div>
-            <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-bleu-marine mb-4">
-                À votre écoute, avec patience et bienveillance
-              </h2>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                Je m&apos;appelle Virginie. Passionnée par le numérique et le contact humain, j&apos;aime ce service pour aider les personnes qui se sentent perdues face aux outils numériques ou aux démarches en ligne.
-              </p>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                Mon objectif est simple : vous accompagner pas à pas, sans stress, pour vous aider à devenir plus autonome dans votre quotidien.
-              </p>
-              <div className="space-y-3">
-                <Benefit text="Accompagnement personnalisé" />
-                <Benefit text="Explications simples et claires" />
-                <Benefit text="À domicile ou à distance" />
-                <Benefit text="Confidentialité et respect" />
-              </div>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-[#C75B6B] px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-[#A84A58]"
-              >
-                Discutons ensemble
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PRICING */}
-      <section id="pricing" className="bg-white px-6 py-14 md:py-20">
-        <div className="mx-auto max-w-5xl text-center">
-          <h2 className="text-4xl font-bold text-bleu-marine mb-4">
-            Tarifs simples et transparents
+        <section id="services" className="px-[30px] py-[70px]">
+          <div className="text-center font-[var(--font-script)] text-[34px] text-[#c17a94]">Ce que je propose</div>
+          <h2 className="mx-auto mt-[18px] max-w-[340px] text-center font-[var(--font-cormorant)] text-[45px] font-medium leading-[1.08] text-[#37272e]">
+            Un accompagnement complet, <span className="italic text-[#b65675]">adapté à vos besoins</span>
           </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-12">
-            Une première séance pour faire connaissance et évaluer vos besoins
+          <p className="mt-[28px] text-center font-[var(--font-inter)] text-[21px] font-light leading-[1.65] text-[#8f8186]">
+            Du smartphone aux démarches en ligne, je suis là pour simplifier votre quotidien numérique, avec douceur et patience.
           </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl bg-gradient-to-br from-rose-clair to-white p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-bleu-marine mb-4">
-                Séance découverte
-              </h3>
-              <div className="text-5xl font-bold text-rose-principal mb-4">35€</div>
-              <p className="text-foreground/80 mb-6">
-                1h30 d&apos;accompagnement pour faire le point sur vos besoins
-              </p>
-              <ul className="space-y-3 text-left">
-                <Benefit text="Diagnostic complet" />
-                <Benefit text="Première aide concrète" />
-                <Benefit text="Plan d&apos;action" />
-                <Benefit text="Suivi personnalisé" />
-              </ul>
-              <a
-                href="#contact"
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#C75B6B] px-8 py-4 font-semibold text-white shadow-lg transition hover:bg-[#A84A58]"
-              >
-                Réserver ma séance
-              </a>
-            </div>
-            <div className="rounded-2xl bg-gradient-to-br from-bleu-marine to-white p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Pack autonomie
-              </h3>
-              <div className="text-5xl font-bold text-rose-principal mb-4">120€</div>
-              <p className="text-white/80 mb-6">
-                4 séances d&apos;accompagnement pour gagner en autonomie
-              </p>
-              <ul className="space-y-3 text-left">
-                <Benefit text="Accompagnement complet" light />
-                <Benefit text="Idéal pour les seniors" light />
-                <Benefit text="Support continu" light />
-                <Benefit text="Documents personnalisés" light />
-                <Benefit text="Progressif régulier" light />
-              </ul>
-              <a
-                href="#contact"
-                className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 font-semibold text-[#102A4C] shadow-lg transition hover:bg-white/90"
-              >
-                Choisir le pack
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* LOCATION */}
-      <section id="location" className="bg-rose-clair px-6 py-14 md:py-20">
-        <div className="mx-auto max-w-5xl text-center">
-          <h2 className="text-4xl font-bold text-bleu-marine mb-4">
-            Ma zone d&apos;intervention
+          <div className="mt-[58px] space-y-[28px]">
+            {services.map((service) => (
+              <article key={service.title} className="rounded-[28px] border border-[#e5d7dc] bg-white px-[36px] py-[38px] shadow-sm">
+                <div className="mb-[34px] flex h-[62px] w-[62px] items-center justify-center rounded-full bg-[#f7eef2] text-[25px]">
+                  {service.icon}
+                </div>
+                <h3 className="font-[var(--font-cormorant)] text-[27px] font-semibold leading-snug text-[#37272e]">{service.title}</h3>
+                <p className="mt-[18px] font-[var(--font-inter)] text-[18px] font-light leading-[1.7] text-[#8f8186]">{service.text}</p>
+                <p className="mt-[24px] font-[var(--font-inter)] text-[16px] font-light text-[#c17a94]">♡ je vous accompagne personnellement</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="px-[30px] py-[70px]">
+          <div className="font-[var(--font-script)] text-[34px] text-[#c17a94]">À propos de moi</div>
+          <h2 className="mt-[20px] font-[var(--font-cormorant)] text-[45px] font-medium leading-[1.12] text-[#37272e]">
+            Bonjour, je suis <span className="italic text-[#b65675]">Virginie</span>
           </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto mb-12">
-            La Rochelle et les alentours dans un rayon de 20 km
+          <p className="mt-[28px] font-[var(--font-inter)] text-[21px] font-light leading-[1.75] text-[#8f8186]">
+            Passionnée par le numérique et convaincue qu'il doit être accessible à tous, j'accompagne les seniors et les personnes en difficulté numérique à La Rochelle et ses alentours.
           </p>
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-center">
-              <MapPin className="w-12 h-12 text-rose-principal mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-bleu-marine">À domicile</h3>
-              <p className="text-foreground/80">
-                Je me déplace à votre domicile pour vous aider en personne
-              </p>
-            </div>
-            <div className="text-center">
-              <Video className="w-12 h-12 text-rose-principal mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-bleu-marine">À distance</h3>
-              <p className="text-foreground/80">
-                Accompagnement par visioconférence partout en France
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section id="contact" className="bg-[#102A4C] px-6 py-16 text-white md:py-20">
-        <div className="mx-auto max-w-4xl text-center">
-          <Image
-            src="/logo.png"
-            alt="Logo Virginie Assistance Numérique"
-            width={160}
-            height={160}
-            className="mx-auto mb-6"
-          />
-
-          <h2 className="text-3xl font-bold md:text-4xl">
-            Le numérique n’est pas toujours simple, mais vous n’êtes pas seul(e).
+        <section className="px-[30px] py-[70px]">
+          <div className="text-center font-[var(--font-script)] text-[34px] text-[#c17a94]">Vous avez des questions ?</div>
+          <h2 className="mx-auto mt-[18px] max-w-[340px] text-center font-[var(--font-cormorant)] text-[45px] font-medium leading-[1.1] text-[#37272e]">
+            Les réponses à vos <span className="italic text-[#b65675]">interrogations</span>
           </h2>
-
-          <p className="mt-4 text-lg text-white/90">Avec patience, bienveillance et simplicité, je vous accompagne pas à pas.</p>
-
-          <p className="mt-3 text-xl font-semibold text-[#F8DFE1]">Le numérique en toute sérénité</p>
-
-          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-            <a
-              href="mailto:virginie.assistancenumerique@gmail.com"
-              className="rounded-full bg-[#C75B6B] px-8 py-4 font-semibold text-white transition hover:bg-[#A84A58]"
-            >
-              Envoyer un mail
-            </a>
-
-            <a
-              href="https://instagram.com/virginie_assistance_numerique"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-white px-8 py-4 font-semibold text-white transition hover:bg-white/10"
-            >
-              @virginie_assistance_numerique
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer className="bg-[#102A4C] px-6 pb-10 text-white">
-        <div className="mx-auto max-w-6xl border-t border-white/15 pt-10">
-          <div className="flex flex-col items-center gap-6 text-center md:flex-row md:justify-between md:text-left">
-            <div className="flex flex-col items-center gap-4 md:flex-row md:items-center">
-              <Image
-                src="/logo.png"
-                alt="Logo Virginie Assistance Numérique"
-                width={72}
-                height={72}
-                className="h-auto w-16"
-              />
-              <div>
-                <p className="text-lg font-semibold">
-                  <span className="font-script text-2xl font-normal">Virginie</span> Assistance Numérique
+          <div className="mt-[54px] space-y-[16px]">
+            {faqs.map((faq) => (
+              <details key={faq} className="group rounded-[24px] border border-[#e5d7dc] bg-white px-[28px] py-[24px] shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-[var(--font-cormorant)] text-[23px] font-medium leading-snug text-[#37272e]">
+                  {faq}
+                  <span className="font-[var(--font-inter)] text-[#8f8186] transition group-open:rotate-180">⌄</span>
+                </summary>
+                <p className="mt-4 font-[var(--font-inter)] text-[16px] font-light leading-[1.7] text-[#8f8186]">
+                  Je vous réponds simplement, avec bienveillance, selon votre situation.
                 </p>
-                <p className="text-sm text-white/80">Le numérique en toute sérénité</p>
-              </div>
-            </div>
+              </details>
+            ))}
+          </div>
+        </section>
 
-            <div className="flex flex-col gap-2 text-sm text-white/90">
-              <a
-                href="mailto:virginie.assistancenumerique@gmail.com"
-                className="inline-flex items-center justify-center gap-2 underline-offset-4 hover:underline md:justify-start"
-              >
-                <Mail className="h-4 w-4" />
-                <span>virginie.assistancenumerique@gmail.com</span>
-              </a>
-              <a
-                href="https://instagram.com/virginie_assistance_numerique"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 underline-offset-4 hover:underline md:justify-start"
-              >
-                <InstagramIcon className="h-4 w-4" />
-                <span>@virginie_assistance_numerique</span>
-              </a>
+        <section className="px-[30px] py-[70px]">
+          <div className="font-[var(--font-script)] text-[34px] text-[#c17a94]">Contactez-moi</div>
+          <h2 className="mt-[20px] font-[var(--font-cormorant)] text-[45px] font-medium leading-[1.12] text-[#37272e]">
+            Parlons de votre <span className="italic text-[#b65675]">besoin</span>
+          </h2>
+          <p className="mt-[26px] font-[var(--font-inter)] text-[21px] font-light leading-[1.7] text-[#8f8186]">
+            Décrivez-moi votre situation et je vous répondrai personnellement, avec bienveillance.
+          </p>
+
+          <form className="mt-[44px] rounded-[28px] border border-[#e5d7dc] bg-white px-[28px] py-[34px] shadow-sm">
+            <label className="block font-[var(--font-inter)] text-[18px] font-light text-[#65575c]">Votre prénom et nom *</label>
+            <input className="mt-3 h-[54px] w-full rounded-[16px] border border-[#e5d7dc] px-5 font-[var(--font-inter)] text-[18px] outline-none" placeholder="Marie Dupont" />
+            <label className="mt-7 block font-[var(--font-inter)] text-[18px] font-light text-[#65575c]">Votre email *</label>
+            <input className="mt-3 h-[54px] w-full rounded-[16px] border border-[#e5d7dc] px-5 font-[var(--font-inter)] text-[18px] outline-none" placeholder="marie@email.com" />
+            <label className="mt-7 block font-[var(--font-inter)] text-[18px] font-light text-[#65575c]">Téléphone</label>
+            <input className="mt-3 h-[54px] w-full rounded-[16px] border border-[#e5d7dc] px-5 font-[var(--font-inter)] text-[18px] outline-none" placeholder="06 12 34 56 78" />
+            <button type="button" className="mt-9 flex h-[64px] w-full items-center justify-center gap-4 rounded-full bg-[#c47b96] font-[var(--font-inter)] text-[19px] font-light text-white shadow-[0_12px_22px_rgba(176,95,122,0.22)]">
+              <Heart size={25} strokeWidth={1.8} /> Envoyer ma demande
+            </button>
+          </form>
+        </section>
+
+        <footer className="bg-[#3b272e] px-[30px] py-[58px] text-[#d6c3ca]">
+          <div className="flex items-center gap-[18px]">
+            <div className="relative h-[50px] w-[50px] overflow-hidden rounded-full border border-[#8c5266] bg-white shadow-sm">
+              <Image src="/logo.png" alt="Logo Virginie Assistance Numérique" fill className="object-contain p-1" />
+            </div>
+            <div>
+              <div className="font-[var(--font-script)] text-[31px] leading-none text-white">Virginie</div>
+              <div className="mt-[8px] font-[var(--font-inter)] text-[12px] uppercase tracking-[0.24em] text-[#bea9b1]">Assistance Numérique</div>
             </div>
           </div>
-
-          <p className="mt-8 text-center text-xs text-white/60">
-            {new Date().getFullYear()} Virginie Assistance Numérique. Tous droits réservés.
+          <p className="mt-[30px] font-[var(--font-script)] text-[27px] text-[#c17a94]">La sérénité numérique</p>
+          <p className="mt-[22px] font-[var(--font-inter)] text-[18px] font-light leading-[1.8] text-[#bdaab1]">
+            J'accompagne seniors et particuliers à La Rochelle et alentours, avec douceur et patience, à domicile ou à distance.
           </p>
-        </div>
-      </footer>
+          <div className="mt-[44px] border-t border-white/30 pt-[28px] font-[var(--font-inter)] text-[14px] font-light text-[#a89199]">
+            © 2026 Virginie Assistance Numérique · Sérénité Numérique La Rochelle
+          </div>
+        </footer>
+      </section>
     </main>
   );
-};
-
-export default LandingPage;
+}

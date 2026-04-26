@@ -28,6 +28,78 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.ton-domaine.fr/#localbusiness",
+  name: "Virginie Assistance Numérique",
+  description:
+    "Assistance numérique à domicile et à distance à La Rochelle pour seniors et particuliers : smartphone, ordinateur, emails, démarches administratives en ligne et sécurité internet.",
+  url: "https://www.ton-domaine.fr",
+  email: "virginie.assistancenumerique@gmail.com",
+  image: "https://www.ton-domaine.fr/og-image.jpg",
+  priceRange: "€€",
+  areaServed: [
+    "La Rochelle",
+    "Lagord",
+    "Aytré",
+    "Périgny",
+    "Nieul-sur-Mer",
+    "Puilboreau",
+    "Angoulins",
+    "Châtelaillon-Plage",
+    "L'Houmeau",
+    "Dompierre-sur-Mer",
+    "Charente-Maritime",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "La Rochelle",
+    addressRegion: "Nouvelle-Aquitaine",
+    postalCode: "17000",
+    addressCountry: "FR",
+  },
+  sameAs: ["https://www.instagram.com/virginie.assistancenumerique"],
+  makesOffer: [
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Assistance smartphone et tablette à La Rochelle",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Aide aux démarches administratives en ligne",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Aide ordinateur et emails à domicile",
+      },
+    },
+    {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "Sécurité internet et prévention des arnaques",
+      },
+    },
+  ],
+};
+
 export default function Home() {
-  return <LandingPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <LandingPage />
+    </>
+  );
 }
