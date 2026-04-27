@@ -3,11 +3,14 @@
 import { useState } from "react";
 import { Heart, Mail, MapPin } from "lucide-react";
 
-const INSTAGRAM_URL = "https://www.instagram.com/virginie.assistancenumerique";
+const INSTAGRAM_URL = "https://www.instagram.com/virginie_assistance_numerique";
 
 const serviceOptions = [
   { value: "accompagnement_informatique", label: "Ordinateur & emails" },
-  { value: "demarches_administratives", label: "Démarches en ligne (impôts, CAF, Ameli…)" },
+  {
+    value: "demarches_administratives",
+    label: "Démarches en ligne (impôts, CAF, Ameli…)",
+  },
   { value: "configuration_appareils", label: "Smartphone & tablette" },
   { value: "cybersecurite", label: "Sécurité & arnaques" },
   { value: "formation_outils", label: "Formation & autonomie" },
@@ -22,6 +25,15 @@ const contactPreferenceOptions = [
   { value: "whatsapp", label: "WhatsApp" },
   { value: "instagram", label: "Instagram" },
 ];
+
+type FormState = {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  contact_preference: string;
+  message: string;
+};
 
 function InstagramIcon({ className }: { className?: string }) {
   return (
@@ -41,19 +53,7 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-type FormState = {
-  name: string;
-  email: string;
-  phone: string;
-  service: string;
-  contact_preference: string;
-  message: string;
-};
-
 export default function ContactSection() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -63,13 +63,26 @@ export default function ContactSection() {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleChange = (field: keyof FormState, value: string) => {
-    setForm((prev) => ({ ...prev, [field]: value }));
+    setForm((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+
+    setSuccessMessage("");
+    setErrorMessage("");
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     setIsSubmitting(true);
+    setSuccessMessage("");
+    setErrorMessage("");
 
     try {
       const response = await fetch("/api/contact", {
@@ -80,11 +93,18 @@ export default function ContactSection() {
         body: JSON.stringify(form),
       });
 
+      const data = await response.json().catch(() => null);
+
       if (!response.ok) {
-        throw new Error("Erreur lors de l’envoi du formulaire.");
+        throw new Error(
+          data?.error || "Erreur lors de l’envoi de votre demande."
+        );
       }
 
-      setIsSubmitted(true);
+      setSuccessMessage(
+        "Merci, votre demande a bien été envoyée. Je vous répondrai rapidement."
+      );
+
       setForm({
         name: "",
         email: "",
@@ -94,7 +114,11 @@ export default function ContactSection() {
         message: "",
       });
     } catch (error) {
-      alert("Une erreur est survenue. Merci de réessayer ou de me contacter directement par email.");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "Une erreur est survenue. Merci de réessayer."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -117,7 +141,7 @@ export default function ContactSection() {
             <p className="mb-8 text-lg font-light leading-relaxed text-muted-foreground">
               Décrivez-moi votre situation et je vous répondrai personnellement,
               avec bienveillance. Je vous propose un devis gratuit, sans
-              engagement.
+              engagement, et je reviens vers vous sous 24h.
             </p>
 
             <div className="space-y-5">
@@ -125,6 +149,7 @@ export default function ContactSection() {
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
                   <Mail className="h-5 w-5" />
                 </div>
+
                 <div>
                   <p className="font-serif text-lg font-medium text-foreground">
                     Email
@@ -139,12 +164,15 @@ export default function ContactSection() {
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
                   <MapPin className="h-5 w-5" />
                 </div>
+
                 <div>
                   <p className="font-serif text-lg font-medium text-foreground">
                     Zone d’intervention
                   </p>
                   <p className="text-sm font-light text-muted-foreground">
-                    La Rochelle & alentours, rayon de 20 km
+                    La Rochelle & alentours (20 km)
+                    <br />
+                    Charente-Maritime (17)
                   </p>
                 </div>
               </div>
@@ -158,21 +186,20 @@ export default function ContactSection() {
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
                   <InstagramIcon className="h-5 w-5" />
                 </div>
+
                 <div>
-                  <p className="font-serif text-lg font-medium">
+                  <p className="font-serif text-lg font-medium text-foreground">
                     Instagram
                   </p>
                   <p className="text-sm font-light text-muted-foreground">
-                    @virginie.assistancenumerique
+                    @virginie_assistance_numerique
                   </p>
                 </div>
               </a>
             </div>
 
             <div className="mt-10 rounded-2xl border border-primary/15 bg-primary/10 p-6">
-              <p className="font-script text-2xl text-primary">
-                Ma promesse
-              </p>
+              <p className="font-script text-2xl text-primary">Ma promesse</p>
               <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">
                 Patience, bienveillance et clarté. Je prends le temps qu’il
                 faut — à votre rythme — pour que vous vous sentiez à l’aise et
@@ -185,14 +212,19 @@ export default function ContactSection() {
             onSubmit={handleSubmit}
             className="rounded-3xl border border-border bg-white p-6 shadow-xl shadow-primary/10 sm:p-8"
           >
-            {isSubmitted && (
-              <div className="mb-6 rounded-2xl border border-primary/15 bg-primary/10 p-4 text-sm font-light text-foreground">
-                Merci, votre demande a bien été envoyée. Je vous répondrai
-                rapidement.
+            {successMessage && (
+              <div className="mb-6 rounded-2xl border border-primary/15 bg-primary/10 p-4 text-sm font-light leading-relaxed text-foreground">
+                {successMessage}
               </div>
             )}
 
-            <div className="space-y-5">
+            {errorMessage && (
+              <div className="mb-6 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-light leading-relaxed text-red-700">
+                {errorMessage}
+              </div>
+            )}
+
+            <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label className="mb-2 block text-sm font-light text-foreground">
                   Votre prénom et nom *
@@ -200,9 +232,11 @@ export default function ContactSection() {
                 <input
                   required
                   value={form.name}
-                  onChange={(e) => handleChange("name", e.target.value)}
+                  onChange={(event) =>
+                    handleChange("name", event.target.value)
+                  }
                   placeholder="Marie Dupont"
-                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring"
                 />
               </div>
 
@@ -214,9 +248,11 @@ export default function ContactSection() {
                   required
                   type="email"
                   value={form.email}
-                  onChange={(e) => handleChange("email", e.target.value)}
+                  onChange={(event) =>
+                    handleChange("email", event.target.value)
+                  }
                   placeholder="marie@email.com"
-                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring"
                 />
               </div>
 
@@ -226,9 +262,11 @@ export default function ContactSection() {
                 </label>
                 <input
                   value={form.phone}
-                  onChange={(e) => handleChange("phone", e.target.value)}
+                  onChange={(event) =>
+                    handleChange("phone", event.target.value)
+                  }
                   placeholder="06 12 34 56 78"
-                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring"
                 />
               </div>
 
@@ -238,8 +276,10 @@ export default function ContactSection() {
                 </label>
                 <select
                   value={form.service}
-                  onChange={(e) => handleChange("service", e.target.value)}
-                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  onChange={(event) =>
+                    handleChange("service", event.target.value)
+                  }
+                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring"
                 >
                   <option value="">Choisir...</option>
                   {serviceOptions.map((option) => (
@@ -250,16 +290,16 @@ export default function ContactSection() {
                 </select>
               </div>
 
-              <div>
+              <div className="sm:col-span-2">
                 <label className="mb-2 block text-sm font-light text-foreground">
                   Comment souhaitez-vous être contacté·e ?
                 </label>
                 <select
                   value={form.contact_preference}
-                  onChange={(e) =>
-                    handleChange("contact_preference", e.target.value)
+                  onChange={(event) =>
+                    handleChange("contact_preference", event.target.value)
                   }
-                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring"
                 >
                   <option value="">Votre préférence...</option>
                   {contactPreferenceOptions.map((option) => (
@@ -270,32 +310,34 @@ export default function ContactSection() {
                 </select>
               </div>
 
-              <div>
+              <div className="sm:col-span-2">
                 <label className="mb-2 block text-sm font-light text-foreground">
-                  Votre message *
+                  Décrivez votre besoin *
                 </label>
                 <textarea
                   required
                   value={form.message}
-                  onChange={(e) => handleChange("message", e.target.value)}
-                  placeholder="Expliquez-moi simplement ce dont vous avez besoin..."
-                  className="min-h-32 w-full rounded-2xl border border-input bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                  onChange={(event) =>
+                    handleChange("message", event.target.value)
+                  }
+                  placeholder="Expliquez-moi votre situation, en toute simplicité..."
+                  className="min-h-32 w-full rounded-2xl border border-input bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-ring"
                 />
               </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="flex h-13 w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-base font-light text-white transition hover:bg-accent disabled:opacity-60"
-              >
-                <Heart className="h-5 w-5" />
-                {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
-              </button>
-
-              <p className="text-center text-xs font-light text-muted-foreground">
-                Devis gratuit et sans engagement · Réponse sous 24h
-              </p>
             </div>
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="mt-7 flex h-12 w-full items-center justify-center gap-3 rounded-full bg-primary px-6 text-base font-light text-white shadow-lg shadow-primary/20 transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <Heart className="h-5 w-5" />
+              {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
+            </button>
+
+            <p className="mt-5 text-center text-xs font-light text-muted-foreground">
+              Devis gratuit et sans engagement · Réponse sous 24h
+            </p>
           </form>
         </div>
       </div>

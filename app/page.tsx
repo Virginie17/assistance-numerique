@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import FAQSection from "@/components/landing/FAQSection";
 import ContactSection from "@/components/landing/ContactSection";
 import Footer from "@/components/landing/Footer";
+import PricingSection from "@/components/landing/PricingSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ServicesSection />
       <AboutSection />
       <BenefitsSection />
+      <PricingSection />
       <AreaSection />
       <TestimonialsSection />
       <FAQSection />

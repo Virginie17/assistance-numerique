@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "À propos", href: "#apropos" },
+  { label: "Tarifs", href: "#tarifs" },
   { label: "Zone", href: "#zone" },
   { label: "Avis", href: "#temoignages" },
   { label: "FAQ", href: "#faq" },
@@ -33,17 +34,11 @@ function Logo({ dark = false }: { dark?: boolean }) {
   return (
     <a href="#" className="flex items-center gap-3 no-underline">
       <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/20 bg-primary/15">
-        <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
-          <path
-            d="M12 21C12 21 3 14 3 8.5C3 5.46 5.46 3 8.5 3C10.24 3 11.79 3.85 12 5C12.21 3.85 13.76 3 15.5 3C18.54 3 21 5.46 21 8.5C21 14 12 21 12 21Z"
-            fill="hsl(340 35% 62%)"
-            fillOpacity="0.5"
-            stroke="hsl(340 35% 55%)"
-            strokeWidth="1.2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <img
+          src="/logo.png"
+          alt="Logo Virginie Assistance Numérique"
+          className="h-5 w-5 object-contain"
+        />
       </div>
 
       <div className="leading-tight">
@@ -104,10 +99,10 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="https://www.instagram.com/virginie.assistancenumerique"
+              href="https://www.instagram.com/virginie_assistance_numerique"
               target="_blank"
               rel="noopener noreferrer"
-              title="Instagram @virginie.assistancenumerique"
+              title="Instagram @virginie_assistance_numerique"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/25 bg-primary/10 text-primary transition-colors hover:bg-primary/15"
             >
               <InstagramIcon className="h-4 w-4" />
@@ -148,13 +143,13 @@ export default function Navbar() {
 
             <div className="mt-3 space-y-2 border-t border-border pt-3">
               <a
-                href="https://www.instagram.com/virginie.assistancenumerique"
+                href="https://www.instagram.com/virginie_assistance_numerique"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-light text-muted-foreground transition-colors hover:bg-muted hover:text-accent"
               >
                 <InstagramIcon className="h-4 w-4" />
-                @virginie.assistancenumerique
+                @virginie_assistance_numerique
               </a>
 
               <a

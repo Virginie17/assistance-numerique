@@ -1,5 +1,5 @@
 const PORTRAIT_URL =
-  "https://media.base44.com/images/public/69edd9adb35526e88df2b7b9/7ffdf0495_generated_image.png";
+  "/virginie.webp";
 
 const values = [
   { icon: "♡", label: "Patience & écoute" },

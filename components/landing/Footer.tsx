@@ -38,18 +38,11 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/20">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="h-5 w-5"
-                >
-                  <path
-                    d="M12 21C12 21 3 14 3 8.5C3 5.46 5.46 3 8.5 3C10.24 3 11.79 3.85 12 5C12.21 3.85 13.76 3 15.5 3C18.54 3 21 5.46 21 8.5C21 14 12 21 12 21Z"
-                    fill="hsl(340 35% 62% / 0.4)"
-                    stroke="hsl(340 35% 72%)"
-                    strokeWidth="1.2"
-                  />
-                </svg>
+                <img
+                  src="/logo.png"
+                  alt="Logo Virginie Assistance Numérique"
+                  className="h-5 w-5 object-contain"
+                />
               </div>
 
               <div>
@@ -73,13 +66,13 @@ export default function Footer() {
             </p>
 
             <a
-              href="https://www.instagram.com/virginie.assistancenumerique"
+              href="https://www.instagram.com/virginie_assistance_numerique"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-light text-white/50 transition-colors hover:text-white/80"
             >
               <InstagramIcon className="h-4 w-4" />
-              @virginie.assistancenumerique
+              @virginie_assistance_numerique
             </a>
           </div>
 
