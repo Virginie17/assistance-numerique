@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter, Parisienne } from "next/font/google";
 import "./globals.css";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-const siteUrl = "https://www.ton-domaine.fr";
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.ton-domaine.fr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -11,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | Virginie Assistance Numérique",
   },
   description:
-    "Assistance numérique à domicile et à distance à La Rochelle : aide smartphone, ordinateur, emails, démarches en ligne, CAF, impôts, Ameli et sécurité internet pour seniors et particuliers.",
+    "Assistance numérique à domicile et à distance à La Rochelle pour seniors et particuliers : smartphone, ordinateur, emails, démarches administratives en ligne, CAF, impôts, Ameli et sécurité internet.",
   keywords: [
     "assistance numérique La Rochelle",
     "aide informatique senior La Rochelle",
@@ -54,31 +57,14 @@ export const metadata: Metadata = {
   },
 };
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-inter",
-});
-
-const parisienne = Parisienne({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-script",
-});
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="fr">
-      <body className={`${cormorant.variable} ${inter.variable} ${parisienne.variable}`}>
-        {children}
-      </body>
+    <html lang="fr" className={cn("font-sans", geist.variable)}>
+      <body>{children}</body>
     </html>
   );
 }
