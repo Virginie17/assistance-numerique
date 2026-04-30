@@ -1,6 +1,7 @@
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import ServicesSection from "@/components/landing/ServicesSection";
+import ProfessionalSection from "@/components/landing/ProfessionalSection";
 import AboutSection from "@/components/landing/AboutSection";
 import BenefitsSection from "@/components/landing/BenefitsSection";
 import AreaSection from "@/components/landing/AreaSection";
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <ServicesSection />
+      <ProfessionalSection />
       <AboutSection />
       <BenefitsSection />
       <PricingSection />
