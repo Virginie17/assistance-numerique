@@ -72,7 +72,7 @@ export default function Navbar() {
               <InstagramIcon className="h-4 w-4" />
             </a>
 
-            <a href="#contact" className="rounded-full bg-primary px-6 py-2.5 text-sm font-light text-white transition-colors hover:bg-accent">
+            <a href="/#contact" className="rounded-full bg-primary px-6 py-2.5 text-sm font-light text-white transition-colors hover:bg-accent">
               Contactez-moi ♡
             </a>
           </div>
@@ -98,7 +98,7 @@ export default function Navbar() {
                 @virginie_assistance_numerique
               </a>
 
-              <a href="#contact" onClick={() => setIsOpen(false)} className="flex h-11 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-light text-white transition-colors hover:bg-accent">
+              <a href="/#contact" onClick={() => setIsOpen(false)} className="flex h-11 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-light text-white transition-colors hover:bg-accent">
                 Contactez-moi ♡
               </a>
             </div>
