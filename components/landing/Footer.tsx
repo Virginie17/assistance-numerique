@@ -85,7 +85,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm font-light text-white/50">
               <li>
                 <a
-                  href="/#services"
+                  href="#services"
                   className="transition-colors hover:text-white/80"
                 >
                   Smartphone & tablette
@@ -94,7 +94,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/#services"
+                  href="#services"
                   className="transition-colors hover:text-white/80"
                 >
                   Démarches en ligne
@@ -103,7 +103,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/#services"
+                  href="#services"
                   className="transition-colors hover:text-white/80"
                 >
                   Ordinateur & emails
@@ -112,7 +112,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/#services"
+                  href="#services"
                   className="transition-colors hover:text-white/80"
                 >
                   Sécurité & arnaques
@@ -121,7 +121,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/#services"
+                  href="#services"
                   className="transition-colors hover:text-white/80"
                 >
                   Formation & autonomie
@@ -148,7 +148,7 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm font-light text-white/50">
               <li>
                 <a
-                  href="/#services"
+                  href="#services"
                   className="transition-colors hover:text-white/80"
                 >
                   Mes services
@@ -157,7 +157,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/#apropos"
+                  href="#apropos"
                   className="transition-colors hover:text-white/80"
                 >
                   À propos
@@ -166,7 +166,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/#zone"
+                  href="#zone"
                   className="transition-colors hover:text-white/80"
                 >
                   Zone d’intervention
@@ -175,7 +175,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/#temoignages"
+                  href="#temoignages"
                   className="transition-colors hover:text-white/80"
                 >
                   Avis clients
@@ -184,7 +184,7 @@ export default function Footer() {
 
               <li>
                 <a
-                  href="/#faq"
+                  href="#faq"
                   className="transition-colors hover:text-white/80"
                 >
                   FAQ
