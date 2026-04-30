@@ -61,7 +61,7 @@ export default function Footer() {
             </p>
 
             <p className="mb-4 max-w-xs text-sm font-light leading-relaxed text-white/50">
-              J'accompagne seniors et particuliers à La Rochelle et alentours,
+              J'accompagne seniors, particuliers et professionnels à La Rochelle et alentours,
               avec douceur et patience, à domicile ou à distance.
             </p>
 
@@ -125,6 +125,15 @@ export default function Footer() {
                   className="transition-colors hover:text-white/80"
                 >
                   Formation & autonomie
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/facturation-electronique"
+                  className="transition-colors hover:text-white/80"
+                >
+                  Facturation électronique
                 </a>
               </li>
             </ul>

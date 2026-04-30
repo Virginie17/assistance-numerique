@@ -332,7 +332,7 @@ export default function FacturationElectroniquePage() {
             </p>
             <a
               href="#contact"
-              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-light text-primary transition-colors hover:bg-white/90"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/90"
             >
               Je veux être accompagné(e)
               <ArrowRight className="h-4 w-4" />

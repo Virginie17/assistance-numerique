@@ -66,7 +66,7 @@ export default function ProfessionalSection() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="/facturation-electronique"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-light text-white transition-colors hover:bg-accent"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-light text-white shadow-lg shadow-primary/20 transition-colors hover:bg-primary"
               >
                 Découvrir l'accompagnement
                 <ArrowRight className="h-4 w-4" />

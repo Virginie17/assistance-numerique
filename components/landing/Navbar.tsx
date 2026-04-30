@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "À propos", href: "#apropos" },
-  { label: "Tarifs", href: "#tarifs" },
-  { label: "Zone", href: "#zone" },
-  { label: "Avis", href: "#temoignages" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Services", href: "/#services" },
+  { label: "À propos", href: "/#apropos" },
+  { label: "Tarifs", href: "/#tarifs" },
+  { label: "Pro", href: "/facturation-electronique" },
+  { label: "Zone", href: "/#zone" },
+  { label: "Avis", href: "/#temoignages" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 function InstagramIcon({ className }: { className?: string }) {
