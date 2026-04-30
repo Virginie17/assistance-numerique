@@ -15,6 +15,9 @@ const serviceOptions = [
   { value: "cybersecurite", label: "Sécurité & arnaques" },
   { value: "formation_outils", label: "Formation & autonomie" },
   { value: "assistance_distance", label: "Assistance à distance" },
+  { value: "facturation_electronique", label: "Facturation électronique" },
+  { value: "creation_site", label: "Création de site internet" },
+  { value: "visibilite", label: "Visibilité en ligne" },
   { value: "autre", label: "Autre besoin" },
 ];
 

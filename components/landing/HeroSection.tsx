@@ -62,7 +62,7 @@ export default function HeroSection() {
               </a>
 
               <a
-                href="#services"
+                href="/#services"
                 className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base font-light text-accent transition-all hover:bg-primary/10"
               >
                 Découvrir mes services

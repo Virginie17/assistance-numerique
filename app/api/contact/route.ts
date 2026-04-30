@@ -42,7 +42,7 @@ export async function POST(request: Request) {
     }
 
     const toEmail =
-      process.env.CONTACT_TO_EMAIL || "btovdeveloppement@gmail.com";
+      process.env.CONTACT_TO_EMAIL || "virginie.assistancenumerique@gmail.com";
 
     const fromEmail =
       process.env.CONTACT_FROM_EMAIL ||
