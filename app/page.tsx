@@ -1,5 +1,6 @@
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
+import TargetChoiceSection from "@/components/landing/TargetChoiceSection";
 import ServicesSection from "@/components/landing/ServicesSection";
 import ProfessionalSection from "@/components/landing/ProfessionalSection";
 import AboutSection from "@/components/landing/AboutSection";
@@ -16,6 +17,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
+      <TargetChoiceSection />
       <ServicesSection />
       <ProfessionalSection />
       <AboutSection />
