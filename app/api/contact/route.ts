@@ -7,6 +7,7 @@ type ContactPayload = {
   name?: string;
   email?: string;
   phone?: string;
+  client_type?: string;
   service?: string;
   contact_preference?: string;
   message?: string;
@@ -30,6 +31,7 @@ export async function POST(request: Request) {
     const name = body.name?.trim();
     const email = body.email?.trim();
     const phone = body.phone?.trim() || "Non renseigné";
+    const clientType = body.client_type || "Non précisé";
     const service = body.service || "Non précisé";
     const preference = body.contact_preference || "Non précisé";
     const message = body.message?.trim();
@@ -58,6 +60,7 @@ export async function POST(request: Request) {
         <p><strong>Nom :</strong> ${name}</p>
         <p><strong>Email :</strong> ${email}</p>
         <p><strong>Téléphone :</strong> ${phone}</p>
+        <p><strong>Type de client :</strong> ${clientType}</p>
         <p><strong>Besoin :</strong> ${service}</p>
         <p><strong>Préférence :</strong> ${preference}</p>
         <p><strong>Message :</strong></p>
