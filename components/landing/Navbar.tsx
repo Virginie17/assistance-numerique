@@ -4,13 +4,11 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Services", href: "/#services" },
-  { label: "À propos", href: "/#apropos" },
+  { label: "Particuliers", href: "/#particuliers" },
+  { label: "Professionnels", href: "/#professionnels" },
   { label: "Tarifs", href: "/#tarifs" },
-  { label: "Pro", href: "/facturation-electronique" },
   { label: "Zone", href: "/#zone" },
-  { label: "Avis", href: "/#temoignages" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -31,12 +29,8 @@ function Logo({ dark = false }: { dark?: boolean }) {
       </div>
 
       <div className="leading-tight">
-        <span className={`block font-script text-xl leading-tight ${dark ? "text-white" : "text-accent"}`}>
-          Virginie
-        </span>
-        <span className={`-mt-0.5 block font-sans text-[10px] uppercase tracking-widest ${dark ? "text-white/70" : "text-muted-foreground"}`}>
-          Assistance Numérique
-        </span>
+        <span className={`block font-script text-xl leading-tight ${dark ? "text-white" : "text-accent"}`}>Virginie</span>
+        <span className={`-mt-0.5 block font-sans text-[10px] uppercase tracking-widest ${dark ? "text-white/70" : "text-muted-foreground"}`}>Assistance Numérique</span>
       </div>
     </a>
   );
@@ -61,9 +55,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-8 lg:flex">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="text-sm font-light text-muted-foreground transition-colors hover:text-accent">
-                {link.label}
-              </a>
+              <a key={link.href} href={link.href} className="text-sm font-light text-muted-foreground transition-colors hover:text-accent">{link.label}</a>
             ))}
           </div>
 
@@ -72,9 +64,7 @@ export default function Navbar() {
               <InstagramIcon className="h-4 w-4" />
             </a>
 
-            <a href="/#contact" className="rounded-full bg-primary px-6 py-2.5 text-sm font-light text-white transition-colors hover:bg-accent">
-              Contactez-moi ♡
-            </a>
+            <a href="/#contact" className="rounded-full bg-primary px-6 py-2.5 text-sm font-light text-white transition-colors hover:bg-accent">Demander un devis ♡</a>
           </div>
 
           <button type="button" onClick={() => setIsOpen((prev) => !prev)} aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"} className="p-2 text-foreground lg:hidden">
@@ -87,9 +77,7 @@ export default function Navbar() {
         <div className="overflow-hidden border-b border-border bg-card lg:hidden">
           <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block rounded-xl px-4 py-3 text-sm font-light text-muted-foreground transition-colors hover:bg-muted hover:text-accent">
-                {link.label}
-              </a>
+              <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block rounded-xl px-4 py-3 text-sm font-light text-muted-foreground transition-colors hover:bg-muted hover:text-accent">{link.label}</a>
             ))}
 
             <div className="mt-3 space-y-2 border-t border-border pt-3">
@@ -98,9 +86,7 @@ export default function Navbar() {
                 @virginie_assistance_numerique
               </a>
 
-              <a href="/#contact" onClick={() => setIsOpen(false)} className="flex h-11 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-light text-white transition-colors hover:bg-accent">
-                Contactez-moi ♡
-              </a>
+              <a href="/#contact" onClick={() => setIsOpen(false)} className="flex h-11 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-light text-white transition-colors hover:bg-accent">Demander un devis ♡</a>
             </div>
           </div>
         </div>
