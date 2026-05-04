@@ -1,103 +1,138 @@
-import { CreditCard, Heart, Info } from "lucide-react";
+import { Building2, CreditCard, Heart, Info, ReceiptText } from "lucide-react";
+
+const individualFeatures = [
+  "À domicile à La Rochelle et alentours",
+  "Assistance possible à distance",
+  "Explications simples, sans jargon",
+  "Idéal pour smartphone, ordinateur, emails et démarches en ligne",
+];
+
+const professionalFeatures = [
+  "Facturation électronique et outils numériques",
+  "Création ou amélioration de site internet",
+  "Organisation digitale et visibilité en ligne",
+  "Facture professionnelle fournie après prestation",
+];
 
 export default function PricingSection() {
   return (
     <section id="tarifs" className="bg-secondary/40 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-14 max-w-2xl text-center">
-          <p className="mb-2 font-script text-2xl text-primary">
-            Mes tarifs
-          </p>
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <p className="mb-2 font-script text-2xl text-primary">Mes tarifs</p>
 
           <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
-            Un tarif clair,{" "}
-            <span className="italic text-accent">simple et accessible</span>
+            Des tarifs clairs,<br />
+            <span className="italic text-accent">selon votre profil</span>
           </h2>
 
           <p className="mt-4 text-lg font-light leading-relaxed text-muted-foreground">
-            Je vous propose un accompagnement personnalisé, à domicile ou à
-            distance, avec un devis gratuit avant toute intervention.
+            Je distingue clairement les accompagnements pour particuliers et seniors des prestations professionnelles réalisées via ma micro-entreprise.
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-3">
           <article className="rounded-3xl border border-border bg-card p-8 shadow-xl shadow-primary/10">
             <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
               <Heart className="h-5 w-5" />
             </div>
 
-            <p className="font-script text-2xl text-primary">
-              Accompagnement numérique
-            </p>
+            <p className="font-script text-2xl text-primary">Particuliers & seniors</p>
+            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Accompagnement numérique</h3>
 
-            <div className="mt-4 flex items-end gap-2">
-              <span className="font-serif text-6xl font-medium leading-none text-foreground">
-                35€
-              </span>
-              <span className="pb-2 text-lg font-light text-muted-foreground">
-                / heure
-              </span>
+            <div className="mt-5 flex items-end gap-2">
+              <span className="font-serif text-6xl font-medium leading-none text-foreground">35€</span>
+              <span className="pb-2 text-lg font-light text-muted-foreground">/ heure</span>
             </div>
 
             <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground">
-              Idéal pour une aide ponctuelle : smartphone, ordinateur, emails,
-              démarches administratives en ligne, sécurité internet ou
-              accompagnement à distance.
+              Pour une aide ponctuelle ou régulière avec vos appareils, vos comptes, vos emails ou vos démarches administratives en ligne.
             </p>
 
             <ul className="mt-7 space-y-3 text-sm font-light text-foreground">
-              <li>♡ Devis gratuit avant intervention</li>
-              <li>♡ À domicile à La Rochelle et alentours</li>
-              <li>♡ Assistance possible à distance</li>
-              <li>♡ Explications simples, sans jargon</li>
+              {individualFeatures.map((feature) => (
+                <li key={feature}>♡ {feature}</li>
+              ))}
             </ul>
-
-            <a
-              href="#contact"
-              className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent"
-            >
-              Demander un accompagnement ♡
-            </a>
-          </article>
-
-          <article className="rounded-3xl border border-border bg-white p-8">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
-              <CreditCard className="h-5 w-5" />
-            </div>
-
-            <p className="font-script text-2xl text-primary">
-              Paiement possible en CESU
-            </p>
-
-            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">
-              Simple pour vous, déclaré correctement
-            </h3>
-
-            <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground">
-              Le CESU permet de déclarer et rémunérer simplement une aide à
-              domicile. Le CESU déclaratif simplifie les démarches du
-              particulier employeur : l’Urssaf calcule les cotisations et édite
-              le bulletin de salaire. Le CESU préfinancé peut aussi servir de
-              moyen de paiement selon votre situation.
-            </p>
 
             <div className="mt-7 rounded-2xl border border-primary/15 bg-primary/10 p-5">
               <div className="flex gap-3">
-                <Info className="mt-1 h-5 w-5 shrink-0 text-primary" />
+                <CreditCard className="mt-1 h-5 w-5 shrink-0 text-primary" />
                 <p className="text-sm font-light leading-relaxed text-foreground">
-                  Le recours aux services à la personne peut ouvrir droit à un
-                  crédit d’impôt de 50% selon les conditions en vigueur. Les
-                  modalités exactes dépendent de votre situation personnelle.
+                  Paiement possible en CESU, carte bancaire ou virement bancaire.
                 </p>
               </div>
             </div>
 
-            <p className="mt-5 text-xs font-light leading-relaxed text-muted-foreground">
-              Informations générales : le CESU déclaratif et le CESU préfinancé
-              sont deux dispositifs différents. Le CESU déclaratif sert à
-              déclarer un salarié à domicile ; le CESU préfinancé est un titre
-              de paiement pouvant couvrir tout ou partie de la prestation.
+            <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-primary px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
+              Demander une aide ♡
+            </a>
+          </article>
+
+          <article className="rounded-3xl border border-accent/20 bg-white p-8 shadow-xl shadow-primary/5">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-accent/15 bg-accent/10 text-accent">
+              <Building2 className="h-5 w-5" />
+            </div>
+
+            <p className="font-script text-2xl text-primary">Professionnels</p>
+            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Prestation micro-entreprise</h3>
+
+            <div className="mt-5 flex items-end gap-2">
+              <span className="font-serif text-5xl font-medium leading-none text-foreground">Sur devis</span>
+            </div>
+
+            <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground">
+              Pour les artisans, auto-entrepreneurs et petites entreprises qui veulent structurer leur numérique, leur facturation ou leur présence en ligne.
             </p>
+
+            <ul className="mt-7 space-y-3 text-sm font-light text-foreground">
+              {professionalFeatures.map((feature) => (
+                <li key={feature}>♡ {feature}</li>
+              ))}
+            </ul>
+
+            <div className="mt-7 rounded-2xl border border-accent/15 bg-accent/10 p-5">
+              <div className="flex gap-3">
+                <ReceiptText className="mt-1 h-5 w-5 shrink-0 text-accent" />
+                <p className="text-sm font-light leading-relaxed text-foreground">
+                  Facture professionnelle via ma micro-entreprise. Paiement par virement bancaire.
+                </p>
+              </div>
+            </div>
+
+            <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-accent px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary">
+              Demander un devis pro
+            </a>
+          </article>
+
+          <article className="rounded-3xl border border-border bg-card p-8">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
+              <Info className="h-5 w-5" />
+            </div>
+
+            <p className="font-script text-2xl text-primary">Premier échange</p>
+            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Devis gratuit</h3>
+
+            <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground">
+              Avant toute intervention, nous faisons le point sur votre besoin, votre situation et la solution la plus adaptée.
+            </p>
+
+            <ul className="mt-7 space-y-3 text-sm font-light text-foreground">
+              <li>♡ Échange simple et sans engagement</li>
+              <li>♡ Orientation vers la bonne formule</li>
+              <li>♡ Estimation claire avant intervention</li>
+              <li>♡ Réponse personnalisée selon votre profil</li>
+            </ul>
+
+            <div className="mt-7 rounded-2xl border border-primary/15 bg-primary/10 p-5">
+              <p className="text-sm font-light leading-relaxed text-foreground">
+                Le CESU et les prestations professionnelles sont deux cadres différents. Je vous indique clairement la solution adaptée à votre demande.
+              </p>
+            </div>
+
+            <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-primary/30 px-7 py-4 text-base font-light text-primary transition-all hover:bg-primary/10">
+              Poser ma question
+            </a>
           </article>
         </div>
       </div>
