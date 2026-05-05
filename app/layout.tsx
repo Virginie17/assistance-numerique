@@ -6,11 +6,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://virginieassistance.
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Assistance numérique à La Rochelle | Virginie Assistance Numérique",
+    default: "Assistance numérique à La Rochelle | Particuliers, seniors & professionnels",
     template: "%s | Virginie Assistance Numérique",
   },
   description:
-    "Assistance numérique à domicile et à distance à La Rochelle pour seniors et particuliers : smartphone, ordinateur, emails, démarches administratives en ligne, CAF, impôts, Ameli et sécurité internet.",
+    "Assistance numérique à La Rochelle pour particuliers, seniors et professionnels : aide smartphone, ordinateur, démarches en ligne, sécurité internet, facturation électronique, création de site web et accompagnement digital des artisans et auto-entrepreneurs.",
   keywords: [
     "assistance numérique La Rochelle",
     "aide informatique senior La Rochelle",
@@ -19,12 +19,17 @@ export const metadata: Metadata = {
     "assistance informatique domicile La Rochelle",
     "aide ordinateur La Rochelle",
     "formation numérique senior La Rochelle",
+    "facturation électronique artisan La Rochelle",
+    "aide numérique auto-entrepreneur La Rochelle",
+    "création site internet artisan La Rochelle",
+    "accompagnement digital petite entreprise",
+    "assistance numérique professionnel La Rochelle",
   ],
   alternates: { canonical: siteUrl },
   openGraph: {
-    title: "Assistance numérique à La Rochelle | Virginie",
+    title: "Assistance numérique à La Rochelle | Virginie Assistance Numérique",
     description:
-      "Accompagnement doux et patient pour seniors et particuliers à La Rochelle : smartphone, ordinateur, démarches en ligne et sécurité internet.",
+      "Accompagnement humain pour particuliers, seniors, artisans et auto-entrepreneurs : aide numérique, démarches en ligne, facturation électronique, site web et outils digitaux.",
     url: siteUrl,
     siteName: "Virginie Assistance Numérique",
     locale: "fr_FR",
