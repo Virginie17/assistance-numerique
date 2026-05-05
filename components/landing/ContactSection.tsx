@@ -206,7 +206,13 @@ export default function ContactSection() {
               {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande"}
             </button>
 
-            <p className="mt-5 text-center text-xs font-light text-muted-foreground">Devis gratuit et sans engagement · Réponse sous 24h</p>
+            <p className="mt-5 text-center text-xs font-light leading-relaxed text-muted-foreground">
+              Devis gratuit et sans engagement · Réponse sous 24h
+              <br />
+              Les informations transmises via ce formulaire sont utilisées uniquement pour répondre à votre demande. Elles ne sont jamais revendues. Vous pouvez demander leur accès, modification ou suppression à tout moment.
+              <br />
+              <a href="/mentions-legales" className="text-primary underline underline-offset-4">Voir les mentions légales</a>
+            </p>
           </form>
         </div>
       </div>
