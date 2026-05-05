@@ -42,6 +42,8 @@ type FormState = {
   service: string;
   contact_preference: string;
   message: string;
+  rgpd_consent: boolean;
+  company_website: string;
 };
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -62,6 +64,8 @@ const initialForm: FormState = {
   service: "",
   contact_preference: "",
   message: "",
+  rgpd_consent: false,
+  company_website: "",
 };
 
 export default function ContactSection() {
@@ -70,7 +74,7 @@ export default function ContactSection() {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleChange = (field: keyof FormState, value: string) => {
+  const handleChange = (field: keyof FormState, value: string | boolean) => {
     setForm((prev) => ({ ...prev, [field]: value }));
     setSuccessMessage("");
     setErrorMessage("");
@@ -155,20 +159,27 @@ export default function ContactSection() {
             {successMessage && <div className="mb-6 rounded-2xl border border-primary/15 bg-primary/10 p-4 text-sm font-light leading-relaxed text-foreground">{successMessage}</div>}
             {errorMessage && <div className="mb-6 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-light leading-relaxed text-red-700">{errorMessage}</div>}
 
+            <div className="hidden" aria-hidden="true">
+              <label>
+                Site web de l'entreprise
+                <input tabIndex={-1} autoComplete="off" value={form.company_website} onChange={(event) => handleChange("company_website", event.target.value)} />
+              </label>
+            </div>
+
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <label className="mb-2 block text-sm font-light text-foreground">Votre prénom et nom *</label>
-                <input required value={form.name} onChange={(event) => handleChange("name", event.target.value)} placeholder="Marie Dupont" className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
+                <input required maxLength={80} value={form.name} onChange={(event) => handleChange("name", event.target.value)} placeholder="Marie Dupont" className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
               </div>
 
               <div>
                 <label className="mb-2 block text-sm font-light text-foreground">Votre email *</label>
-                <input required type="email" value={form.email} onChange={(event) => handleChange("email", event.target.value)} placeholder="marie@email.com" className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
+                <input required type="email" maxLength={120} value={form.email} onChange={(event) => handleChange("email", event.target.value)} placeholder="marie@email.com" className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
               </div>
 
               <div>
                 <label className="mb-2 block text-sm font-light text-foreground">Téléphone</label>
-                <input value={form.phone} onChange={(event) => handleChange("phone", event.target.value)} placeholder="06 12 34 56 78" className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
+                <input maxLength={30} value={form.phone} onChange={(event) => handleChange("phone", event.target.value)} placeholder="06 12 34 56 78" className="h-12 w-full rounded-2xl border border-input bg-white px-4 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
               </div>
 
               <div>
@@ -197,8 +208,15 @@ export default function ContactSection() {
 
               <div className="sm:col-span-2">
                 <label className="mb-2 block text-sm font-light text-foreground">Décrivez votre besoin *</label>
-                <textarea required value={form.message} onChange={(event) => handleChange("message", event.target.value)} placeholder="Expliquez-moi votre situation, en toute simplicité..." className="min-h-32 w-full rounded-2xl border border-input bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
+                <textarea required maxLength={1500} value={form.message} onChange={(event) => handleChange("message", event.target.value)} placeholder="Expliquez-moi votre situation, en toute simplicité..." className="min-h-32 w-full rounded-2xl border border-input bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
               </div>
+
+              <label className="sm:col-span-2 flex items-start gap-3 rounded-2xl border border-primary/15 bg-primary/10 p-4 text-sm font-light leading-relaxed text-foreground">
+                <input required type="checkbox" checked={form.rgpd_consent} onChange={(event) => handleChange("rgpd_consent", event.target.checked)} className="mt-1 h-4 w-4 shrink-0 accent-primary" />
+                <span>
+                  J’accepte que les informations saisies soient utilisées uniquement pour répondre à ma demande. Je peux demander leur accès, modification ou suppression à tout moment.
+                </span>
+              </label>
             </div>
 
             <button type="submit" disabled={isSubmitting} className="mt-7 flex h-12 w-full items-center justify-center gap-3 rounded-full bg-primary px-6 text-base font-light text-white shadow-lg shadow-primary/20 transition hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60">
@@ -209,7 +227,7 @@ export default function ContactSection() {
             <p className="mt-5 text-center text-xs font-light leading-relaxed text-muted-foreground">
               Devis gratuit et sans engagement · Réponse sous 24h
               <br />
-              Les informations transmises via ce formulaire sont utilisées uniquement pour répondre à votre demande. Elles ne sont jamais revendues. Vous pouvez demander leur accès, modification ou suppression à tout moment.
+              Les informations transmises via ce formulaire sont utilisées uniquement pour répondre à votre demande. Elles ne sont jamais revendues.
               <br />
               <a href="/mentions-legales" className="text-primary underline underline-offset-4">Voir les mentions légales</a>
             </p>
