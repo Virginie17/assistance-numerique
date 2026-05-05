@@ -108,8 +108,8 @@ export default function TargetChoiceSection() {
                 </div>
               </div>
             </div>
-            <a href="#professionnels" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary">
-              Voir l’aide pour professionnels <ArrowRight className="h-4 w-4" />
+            <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary">
+              Demander un devis professionnel <ArrowRight className="h-4 w-4" />
             </a>
           </article>
         </div>
