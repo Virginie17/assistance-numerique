@@ -51,10 +51,13 @@ export default function MentionsLegalesPage() {
           </article>
 
           <article>
-            <h2 className="font-serif text-2xl font-medium text-foreground">Hébergement</h2>
-            <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
-              Le site est hébergé par le prestataire utilisé pour le déploiement du site. Les informations peuvent être complétées selon l’hébergeur effectivement utilisé en production.
-            </p>
+            <h2 className="font-serif text-2xl font-medium text-foreground">Hébergement et nom de domaine</h2>
+            <div className="mt-4 space-y-2 text-sm font-light leading-relaxed text-muted-foreground">
+              <p><strong className="font-medium text-foreground">Hébergeur :</strong> Vercel Inc.</p>
+              <p><strong className="font-medium text-foreground">Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</p>
+              <p><strong className="font-medium text-foreground">Site web :</strong> https://vercel.com</p>
+              <p><strong className="font-medium text-foreground">Nom de domaine :</strong> enregistré et géré auprès d’OVHcloud.</p>
+            </div>
           </article>
 
           <article>
