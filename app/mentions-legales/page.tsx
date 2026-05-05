@@ -31,6 +31,7 @@ export default function MentionsLegalesPage() {
               <p><strong className="font-medium text-foreground">Nom commercial :</strong> Virginie Assistance Numérique</p>
               <p><strong className="font-medium text-foreground">Statut :</strong> Micro-entreprise</p>
               <p><strong className="font-medium text-foreground">SIRET :</strong> 933 304 800 00024</p>
+              <p><strong className="font-medium text-foreground">Domiciliation :</strong> La Rochelle, France</p>
               <p><strong className="font-medium text-foreground">Zone d’intervention :</strong> La Rochelle et alentours, Charente-Maritime (17), avec possibilité d’accompagnement à distance.</p>
               <p><strong className="font-medium text-foreground">Email :</strong> virginie.assistancenumerique@gmail.com</p>
             </div>
