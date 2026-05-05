@@ -72,6 +72,7 @@ export default function Footer() {
               <li><a href="/#zone" className="transition-colors hover:text-white/80">Zone d’intervention</a></li>
               <li><a href="/#contact" className="transition-colors hover:text-white/80">Contact</a></li>
               <li><a href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</a></li>
+              <li><a href="/conditions-generales-de-vente" className="transition-colors hover:text-white/80">CGV</a></li>
             </ul>
           </div>
 
@@ -92,7 +93,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs font-light text-white/40">
-          © {currentYear} Virginie Assistance Numérique — Tous droits réservés · <a href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</a>
+          © {currentYear} Virginie Assistance Numérique — Tous droits réservés · <a href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</a> · <a href="/conditions-generales-de-vente" className="transition-colors hover:text-white/80">CGV</a>
         </div>
       </div>
     </footer>
