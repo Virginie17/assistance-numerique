@@ -75,14 +75,15 @@ export default function PricingSection() {
             </div>
 
             <p className="font-script text-2xl text-primary">Professionnels</p>
-            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Prestation micro-entreprise</h3>
+            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Pack Sérénité Pro</h3>
 
             <div className="mt-5 flex items-end gap-2">
-              <span className="font-serif text-5xl font-medium leading-none text-foreground">Sur devis</span>
+              <span className="font-serif text-5xl font-medium leading-none text-foreground">97€</span>
+              <span className="pb-2 text-base font-light text-muted-foreground">à partir de</span>
             </div>
 
             <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground">
-              Pour les artisans, auto-entrepreneurs et petites entreprises qui veulent structurer leur numérique, leur facturation ou leur présence en ligne.
+              Un premier accompagnement professionnel pour clarifier vos besoins, structurer vos outils et préparer votre présence numérique.
             </p>
 
             <ul className="mt-7 space-y-3 text-sm font-light text-foreground">
@@ -95,7 +96,7 @@ export default function PricingSection() {
               <div className="flex gap-3">
                 <ReceiptText className="mt-1 h-5 w-5 shrink-0 text-accent" />
                 <p className="text-sm font-light leading-relaxed text-foreground">
-                  Facture professionnelle via ma micro-entreprise. Paiement par virement bancaire.
+                  Facture professionnelle via ma micro-entreprise. Paiement par virement bancaire. Devis personnalisé selon votre besoin.
                 </p>
               </div>
             </div>
