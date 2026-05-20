@@ -54,6 +54,7 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 font-serif text-sm font-medium text-white">Services</h4>
             <ul className="space-y-2.5 text-sm font-light text-white/50">
+              <li><a href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit aidant numérique</a></li>
               <li><a href="/#particuliers" className="transition-colors hover:text-white/80">Particuliers & seniors</a></li>
               <li><a href="/#services" className="transition-colors hover:text-white/80">Démarches en ligne</a></li>
               <li><a href="/#services" className="transition-colors hover:text-white/80">Ordinateur & emails</a></li>
@@ -66,6 +67,7 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 font-serif text-sm font-medium text-white">Navigation</h4>
             <ul className="space-y-2.5 text-sm font-light text-white/50">
+              <li><a href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit</a></li>
               <li><a href="/#particuliers" className="transition-colors hover:text-white/80">Particuliers</a></li>
               <li><a href="/#professionnels" className="transition-colors hover:text-white/80">Professionnels</a></li>
               <li><a href="/#tarifs" className="transition-colors hover:text-white/80">Tarifs</a></li>
@@ -93,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs font-light text-white/40">
-          © {currentYear} Virginie Assistance Numérique — Tous droits réservés · <a href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</a> · <a href="/conditions-generales-de-vente" className="transition-colors hover:text-white/80">CGV</a>
+          © {currentYear} Virginie Assistance Numérique — Tous droits réservés · <a href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit</a> · <a href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</a> · <a href="/conditions-generales-de-vente" className="transition-colors hover:text-white/80">CGV</a>
         </div>
       </div>
     </footer>
