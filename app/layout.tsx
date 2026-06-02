@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "assistance numérique professionnel La Rochelle",
   ],
   alternates: { canonical: siteUrl },
+  verification: {
+    google: "_hYWuwlf_IZDRWwzgrecmb3tWGHJtLEt-j3Gj65IPVQ",
+  },
   openGraph: {
     title: "Assistance numérique à La Rochelle | Virginie Assistance Numérique",
     description:
