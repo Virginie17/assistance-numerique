@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "Diagnostic gratuit", href: "/diagnostic" },
   { label: "Guide gratuit", href: "/guide-aidant-numerique" },
   { label: "Particuliers", href: "/#particuliers" },
   { label: "Professionnels", href: "/#professionnels" },
@@ -54,9 +55,9 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between lg:h-20">
           <Logo />
 
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center gap-6 lg:flex">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className="text-sm font-light text-muted-foreground transition-colors hover:text-accent">{link.label}</a>
+              <a key={link.href} href={link.href} className={`text-sm font-light transition-colors hover:text-accent ${link.href === "/diagnostic" ? "font-bold text-accent" : "text-muted-foreground"}`}>{link.label}</a>
             ))}
           </div>
 
@@ -65,7 +66,7 @@ export default function Navbar() {
               <InstagramIcon className="h-4 w-4" />
             </a>
 
-            <a href="/#contact" className="rounded-full bg-primary px-6 py-2.5 text-sm font-light text-white transition-colors hover:bg-accent">Demander un devis ♡</a>
+            <a href="/diagnostic" className="rounded-full bg-primary px-6 py-2.5 text-sm font-light text-white transition-colors hover:bg-accent">Diagnostic gratuit ♡</a>
           </div>
 
           <button type="button" onClick={() => setIsOpen((prev) => !prev)} aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"} className="p-2 text-foreground lg:hidden">
@@ -78,7 +79,7 @@ export default function Navbar() {
         <div className="overflow-hidden border-b border-border bg-card lg:hidden">
           <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block rounded-xl px-4 py-3 text-sm font-light text-muted-foreground transition-colors hover:bg-muted hover:text-accent">{link.label}</a>
+              <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className={`block rounded-xl px-4 py-3 text-sm transition-colors hover:bg-muted hover:text-accent ${link.href === "/diagnostic" ? "font-bold text-accent" : "font-light text-muted-foreground"}`}>{link.label}</a>
             ))}
 
             <div className="mt-3 space-y-2 border-t border-border pt-3">
@@ -87,7 +88,7 @@ export default function Navbar() {
                 @virginie_assistance_numerique
               </a>
 
-              <a href="/#contact" onClick={() => setIsOpen(false)} className="flex h-11 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-light text-white transition-colors hover:bg-accent">Demander un devis ♡</a>
+              <a href="/diagnostic" onClick={() => setIsOpen(false)} className="flex h-11 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-light text-white transition-colors hover:bg-accent">Faire le diagnostic gratuit ♡</a>
             </div>
           </div>
         </div>
