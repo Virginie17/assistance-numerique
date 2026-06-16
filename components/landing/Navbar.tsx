@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { label: "Diagnostic gratuit", href: "/diagnostic" },
   { label: "Guide gratuit", href: "/guide-aidant-numerique" },
+  { label: "Je vais bien", href: "/je-vais-bien" },
   { label: "Particuliers", href: "/#particuliers" },
   { label: "Professionnels", href: "/#professionnels" },
   { label: "Tarifs", href: "/#tarifs" },
@@ -57,7 +58,7 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-6 lg:flex">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} className={`text-sm font-light transition-colors hover:text-accent ${link.href === "/diagnostic" ? "font-bold text-accent" : "text-muted-foreground"}`}>{link.label}</a>
+              <a key={link.href} href={link.href} className={`text-sm font-light transition-colors hover:text-accent ${link.href === "/diagnostic" || link.href === "/je-vais-bien" ? "font-bold text-accent" : "text-muted-foreground"}`}>{link.label}</a>
             ))}
           </div>
 
@@ -79,7 +80,7 @@ export default function Navbar() {
         <div className="overflow-hidden border-b border-border bg-card lg:hidden">
           <div className="space-y-1 px-4 py-4">
             {navLinks.map((link) => (
-              <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className={`block rounded-xl px-4 py-3 text-sm transition-colors hover:bg-muted hover:text-accent ${link.href === "/diagnostic" ? "font-bold text-accent" : "font-light text-muted-foreground"}`}>{link.label}</a>
+              <a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className={`block rounded-xl px-4 py-3 text-sm transition-colors hover:bg-muted hover:text-accent ${link.href === "/diagnostic" || link.href === "/je-vais-bien" ? "font-bold text-accent" : "font-light text-muted-foreground"}`}>{link.label}</a>
             ))}
 
             <div className="mt-3 space-y-2 border-t border-border pt-3">
