@@ -2,7 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { Heart, Phone, Smartphone, ShieldCheck, Users, CheckCircle2 } from "lucide-react";
 
-const appUrl = "https://preview-sandbox--6a30fa9c758756139afd368d.base44.app?_preview_token=QDIuz5KEKkbfloSS-w-cv6MyaI7umCpFptTqU1CFPSI";
+const appUrl = "https://lien-serain-quotidien.base44.app";
 
 export const metadata = {
   title: "Je vais bien | Application senior - Virginie Assistance Numérique",
