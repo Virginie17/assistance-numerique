@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Particuliers", href: "/#particuliers" },
-  { label: "Artisans", href: "/#artisans" },
-  { label: "Micro-entreprise", href: "/#entrepreneurs" },
-  { label: "Offres", href: "/#offres" },
-  { label: "Résultats", href: "/#resultats" },
+  { label: "Seniors", href: "/seniors" },
+  { label: "Artisans", href: "/artisans" },
+  { label: "Micro-entreprise", href: "/micro-entreprise" },
+  { label: "Témoignages", href: "/temoignages" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
 ];
 
