@@ -38,10 +38,13 @@ export default function ContactForm() {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
     setState("loading");
     setMessage("");
 
-    const formData = new FormData(event.currentTarget);
     const payload = {
       name: String(formData.get("name") || ""),
       email: String(formData.get("email") || ""),
@@ -67,9 +70,9 @@ export default function ContactForm() {
         throw new Error(data.error || "Votre message n’a pas pu être envoyé.");
       }
 
+      form.reset();
       setState("success");
       setMessage("Merci, votre message a bien été envoyé. Je vous réponds rapidement.");
-      event.currentTarget.reset();
     } catch (error) {
       setState("error");
       setMessage(error instanceof Error ? error.message : "Une erreur est survenue.");
