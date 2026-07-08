@@ -1,3 +1,4 @@
+import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
   BadgeCheck,
@@ -6,14 +7,10 @@ import {
   Clock,
   Globe2,
   Heart,
-  Home,
-  Laptop,
   Mail,
   MapPin,
-  MessageCircle,
   MousePointerClick,
   ShieldCheck,
-  Smartphone,
   Sparkles,
   Star,
   Target,
@@ -24,7 +21,16 @@ import ContactForm from "@/components/landing/ContactForm";
 
 const contactEmail = "virginie.assistancenumerique@gmail.com";
 
-const audiences = [
+type Audience = {
+  id: string;
+  title: string;
+  subtitle: string;
+  points: string[];
+  cta: string;
+  icon: LucideIcon;
+};
+
+const audiences: Audience[] = [
   {
     id: "particuliers",
     title: "Particuliers & seniors",
@@ -77,6 +83,12 @@ const proofCards = [
   ["Après", "Je communique plus facilement avec mes proches."],
   ["Avant", "Je viens de créer mon entreprise, mais personne ne me trouve."],
   ["Après", "J’ai une présence en ligne claire et rassurante."],
+];
+
+const values: { icon: LucideIcon; label: string }[] = [
+  { icon: Heart, label: "Patience" },
+  { icon: ShieldCheck, label: "Sécurité" },
+  { icon: Sparkles, label: "Simplicité" },
 ];
 
 const blogIdeas = [
@@ -134,11 +146,7 @@ export default function LandingPage() {
             </div>
 
             <div className="mt-8 grid max-w-2xl gap-3 text-sm text-muted-foreground sm:grid-cols-3">
-              {[
-                "Explications simples",
-                "Accompagnement humain",
-                "Solutions adaptées",
-              ].map((item) => (
+              {["Explications simples", "Accompagnement humain", "Solutions adaptées"].map((item) => (
                 <div key={item} className="flex items-center gap-2 rounded-2xl bg-white/80 px-4 py-3 shadow-sm">
                   <Check className="h-4 w-4 text-primary" /> {item}
                 </div>
@@ -149,7 +157,7 @@ export default function LandingPage() {
           <div className="relative">
             <div className="absolute -left-6 -top-6 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
             <div className="relative rounded-[2.5rem] border border-white/70 bg-white/70 p-5 shadow-2xl shadow-primary/15 backdrop-blur">
-              <img src="/virginie.jpg" alt="Virginie, assistance numérique à La Rochelle" className="h-[500px] w-full rounded-[2rem] object-cover object-center" />
+              <img src="/virginie.webp" alt="Virginie, assistance numérique à La Rochelle" className="h-[500px] w-full rounded-[2rem] object-cover object-top" />
               <div className="absolute bottom-9 left-9 right-9 rounded-[1.75rem] bg-white/92 p-5 shadow-xl">
                 <div className="flex items-center gap-4">
                   <img src="/logo.png" alt="Logo Virginie Assistance Numérique" className="h-16 w-16 rounded-full object-contain" />
@@ -166,7 +174,7 @@ export default function LandingPage() {
 
       <section id="parcours" className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle eyebrow="Un site plus clair" title="Trois parcours pour comprendre immédiatement ce que je peux faire pour vous" text="Chaque public a un besoin différent. J’ai donc structuré l’accueil pour orienter rapidement les visiteurs vers la bonne solution." />
+          <SectionTitle eyebrow="Un site plus clair" title="Trois parcours pour comprendre immédiatement ce que je peux faire pour vous" text="Chaque public a un besoin différent. L’accueil oriente rapidement les visiteurs vers la bonne solution." />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {audiences.map((audience) => {
               const Icon = audience.icon;
@@ -176,9 +184,7 @@ export default function LandingPage() {
                   <h3 className="mt-6 font-serif text-3xl font-semibold">{audience.title}</h3>
                   <p className="mt-2 text-muted-foreground">{audience.subtitle}</p>
                   <ul className="mt-6 space-y-3">
-                    {audience.points.map((point) => (
-                      <li key={point} className="flex gap-3 text-sm text-muted-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{point}</li>
-                    ))}
+                    {audience.points.map((point) => <li key={point} className="flex gap-3 text-sm text-muted-foreground"><Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" />{point}</li>)}
                   </ul>
                   <a href="#contact" className="mt-7 inline-flex items-center gap-2 font-bold text-accent">{audience.cta}<ArrowRight className="h-4 w-4" /></a>
                 </article>
@@ -190,7 +196,7 @@ export default function LandingPage() {
 
       <section id="offres" className="bg-white/55 px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle eyebrow="Des offres lisibles" title="Je ne vends pas seulement du dépannage : je vends du temps, de la confiance et de la visibilité" text="Ces offres rendent ton activité plus compréhensible et plus commerciale, sans perdre ton côté humain et rassurant." />
+          <SectionTitle eyebrow="Des offres lisibles" title="Je ne vends pas seulement du dépannage : je vends du temps, de la confiance et de la visibilité" text="Ces offres rendent l’activité plus compréhensible et plus commerciale, sans perdre le côté humain et rassurant." />
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {offers.map((offer, index) => (
               <article key={offer.name} className="relative rounded-[2rem] border border-primary/15 bg-background p-7 shadow-xl shadow-primary/5">
@@ -212,14 +218,9 @@ export default function LandingPage() {
           <div>
             <p className="font-script text-3xl text-primary">La vraie différence</p>
             <h2 className="mt-2 font-serif text-4xl font-semibold leading-tight md:text-5xl">Parler davantage des résultats que des outils</h2>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              Le visiteur doit se reconnaître immédiatement : moins de stress, plus d’autonomie, plus de visibilité, plus de demandes de contact.
-            </p>
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">Le visiteur doit se reconnaître immédiatement : moins de stress, plus d’autonomie, plus de visibilité, plus de demandes de contact.</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Pill>Plus de confiance</Pill>
-              <Pill>Moins de blocages</Pill>
-              <Pill>Plus de clients</Pill>
-              <Pill>Gain de temps</Pill>
+              <Pill>Plus de confiance</Pill><Pill>Moins de blocages</Pill><Pill>Plus de clients</Pill><Pill>Gain de temps</Pill>
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -238,37 +239,22 @@ export default function LandingPage() {
           <div className="rounded-[2.5rem] bg-white p-8 shadow-xl shadow-primary/10">
             <p className="font-script text-4xl text-primary">Pourquoi j’ai créé cette activité</p>
             <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight">Rendre le numérique plus humain, plus simple et moins intimidant</h2>
-            <p className="mt-5 leading-8 text-muted-foreground">
-              Mon rôle n’est pas seulement d’expliquer des boutons ou des applications. Mon rôle est d’aider les personnes à reprendre confiance, à rester connectées à leurs proches et à avancer dans leurs projets.
-            </p>
+            <p className="mt-5 leading-8 text-muted-foreground">Mon rôle n’est pas seulement d’expliquer des boutons ou des applications. Mon rôle est d’aider les personnes à reprendre confiance, à rester connectées à leurs proches et à avancer dans leurs projets.</p>
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              {[
-                [Heart, "Patience"],
-                [ShieldCheck, "Sécurité"],
-                [Sparkles, "Simplicité"],
-              ].map(([Icon, label]) => {
-                const LucideIcon = Icon as typeof Heart;
-                return <div key={label as string} className="rounded-2xl bg-background p-4 text-center"><LucideIcon className="mx-auto h-6 w-6 text-primary" /><p className="mt-2 text-sm font-bold">{label as string}</p></div>;
-              })}
+              {values.map(({ icon: Icon, label }) => <div key={label} className="rounded-2xl bg-background p-4 text-center"><Icon className="mx-auto h-6 w-6 text-primary" /><p className="mt-2 text-sm font-bold">{label}</p></div>)}
             </div>
           </div>
           <div className="space-y-5">
-            <div className="rounded-[2rem] bg-white p-6 shadow-lg shadow-primary/5">
-              <div className="flex gap-4"><MousePointerClick className="h-7 w-7 text-primary" /><div><h3 className="text-xl font-bold">Un cadeau gratuit pour capter des contacts</h3><p className="mt-2 text-muted-foreground">Mettre en avant le guide gratuit contre les arnaques ou les erreurs numériques permet de créer une première relation avant la vente.</p></div></div>
-            </div>
-            <div className="rounded-[2rem] bg-white p-6 shadow-lg shadow-primary/5">
-              <div className="flex gap-4"><Star className="h-7 w-7 text-primary" /><div><h3 className="text-xl font-bold">Des témoignages à ajouter dès que possible</h3><p className="mt-2 text-muted-foreground">Les avis, mini-histoires clients et avant/après deviendront tes meilleurs arguments commerciaux.</p></div></div>
-            </div>
-            <div className="rounded-[2rem] bg-white p-6 shadow-lg shadow-primary/5">
-              <div className="flex gap-4"><Globe2 className="h-7 w-7 text-primary" /><div><h3 className="text-xl font-bold">Un blog local pour être trouvée sur Google</h3><p className="mt-2 text-muted-foreground">Les articles utiles positionnent ton site comme une référence numérique locale à La Rochelle.</p></div></div>
-            </div>
+            <div className="rounded-[2rem] bg-white p-6 shadow-lg shadow-primary/5"><div className="flex gap-4"><MousePointerClick className="h-7 w-7 text-primary" /><div><h3 className="text-xl font-bold">Un cadeau gratuit pour capter des contacts</h3><p className="mt-2 text-muted-foreground">Mettre en avant le guide gratuit contre les arnaques ou les erreurs numériques permet de créer une première relation avant la vente.</p></div></div></div>
+            <div className="rounded-[2rem] bg-white p-6 shadow-lg shadow-primary/5"><div className="flex gap-4"><Star className="h-7 w-7 text-primary" /><div><h3 className="text-xl font-bold">Des témoignages à ajouter dès que possible</h3><p className="mt-2 text-muted-foreground">Les avis, mini-histoires clients et avant/après deviendront les meilleurs arguments commerciaux.</p></div></div></div>
+            <div className="rounded-[2rem] bg-white p-6 shadow-lg shadow-primary/5"><div className="flex gap-4"><Globe2 className="h-7 w-7 text-primary" /><div><h3 className="text-xl font-bold">Un blog local pour être trouvée sur Google</h3><p className="mt-2 text-muted-foreground">Les articles utiles positionnent le site comme une référence numérique locale à La Rochelle.</p></div></div></div>
           </div>
         </div>
       </section>
 
       <section id="ressources" className="px-4 py-20 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionTitle eyebrow="Visibilité Google" title="Des sujets de contenu qui peuvent attirer du trafic utile" text="Ces idées de ressources renforcent ton expertise et peuvent générer des contacts dans la durée." />
+          <SectionTitle eyebrow="Visibilité Google" title="Des sujets de contenu qui peuvent attirer du trafic utile" text="Ces idées de ressources renforcent l’expertise et peuvent générer des contacts dans la durée." />
           <div className="mt-10 grid gap-4 md:grid-cols-4">
             {blogIdeas.map((idea) => <div key={idea} className="rounded-[1.5rem] border border-primary/15 bg-white p-5 text-sm font-bold shadow-sm">{idea}</div>)}
           </div>
@@ -280,9 +266,7 @@ export default function LandingPage() {
           <div className="lg:sticky lg:top-28">
             <p className="font-script text-4xl text-primary">Passer à l’action</p>
             <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight md:text-5xl">Une question, un blocage ou un projet numérique ?</h2>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              Expliquez-moi votre situation. Je vous réponds avec une première orientation claire et bienveillante.
-            </p>
+            <p className="mt-5 text-lg leading-8 text-muted-foreground">Expliquez-moi votre situation. Je vous réponds avec une première orientation claire et bienveillante.</p>
             <div className="mt-8 space-y-4">
               <a href={`mailto:${contactEmail}`} className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm"><Mail className="h-5 w-5 text-primary" />{contactEmail}</a>
               <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow-sm"><MapPin className="h-5 w-5 text-primary" />La Rochelle et alentours, à domicile ou à distance</div>
@@ -297,16 +281,9 @@ export default function LandingPage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">
             <img src="/logo.png" alt="Logo Virginie Assistance Numérique" className="h-14 w-14 rounded-full bg-white object-contain p-1" />
-            <div>
-              <p className="font-script text-3xl">Virginie Assistance Numérique</p>
-              <p className="text-sm text-white/70">Le numérique en toute sérénité</p>
-            </div>
+            <div><p className="font-script text-3xl">Virginie Assistance Numérique</p><p className="text-sm text-white/70">Le numérique en toute sérénité</p></div>
           </div>
-          <div className="flex flex-wrap gap-4 text-sm text-white/70">
-            <a href="/mentions-legales">Mentions légales</a>
-            <a href="/conditions-generales-de-vente">CGV</a>
-            <a href="#contact">Contact</a>
-          </div>
+          <div className="flex flex-wrap gap-4 text-sm text-white/70"><a href="/mentions-legales">Mentions légales</a><a href="/conditions-generales-de-vente">CGV</a><a href="#contact">Contact</a></div>
         </div>
       </footer>
     </main>
