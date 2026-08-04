@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Seniors", href: "/seniors" },
   { label: "Artisans", href: "/artisans" },
   { label: "Micro-entreprise", href: "/micro-entreprise" },
+  { label: "Tarifs", href: "/#tarifs" },
   { label: "Témoignages", href: "/temoignages" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
