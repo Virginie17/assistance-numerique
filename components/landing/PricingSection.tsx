@@ -41,7 +41,7 @@ export default function PricingSection() {
             <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Accompagnement numérique</h3>
 
             <div className="mt-5 flex items-end gap-2">
-              <span className="font-serif text-6xl font-medium leading-none text-foreground">35€</span>
+              <span className="font-serif text-6xl font-medium leading-none text-foreground">55€</span>
               <span className="pb-2 text-lg font-light text-muted-foreground">/ heure</span>
             </div>
 
