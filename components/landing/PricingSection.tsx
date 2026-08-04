@@ -59,7 +59,7 @@ export default function PricingSection() {
               <div className="flex gap-3">
                 <CreditCard className="mt-1 h-5 w-5 shrink-0 text-primary" />
                 <p className="text-sm font-light leading-relaxed text-foreground">
-                  Paiement possible en CESU, carte bancaire ou virement bancaire.
+                  Paiement possible en espèces, carte bancaire ou virement bancaire.
                 </p>
               </div>
             </div>
@@ -127,7 +127,7 @@ export default function PricingSection() {
 
             <div className="mt-7 rounded-2xl border border-primary/15 bg-primary/10 p-5">
               <p className="text-sm font-light leading-relaxed text-foreground">
-                Le CESU et les prestations professionnelles sont deux cadres différents. Je vous indique clairement la solution adaptée à votre demande.
+                Les paiements des particuliers et les prestations professionnelles sont deux cadres différents. Je vous indique clairement la solution adaptée à votre demande.
               </p>
             </div>
 
