@@ -1,13 +1,6 @@
 const PORTRAIT_URL =
   "/virginie.webp";
 
-const values = [
-  { icon: "♡", label: "Patience & écoute" },
-  { icon: "✦", label: "Aucun jargon technique" },
-  { icon: "♡", label: "Objectif autonomie" },
-  { icon: "✦", label: "Proximité & confiance" },
-];
-
 export default function AboutSection() {
   return (
     <section id="apropos" className="bg-secondary/40 py-20 lg:py-28">
@@ -49,45 +42,17 @@ export default function AboutSection() {
             </h2>
 
             <p className="mb-4 font-light leading-relaxed text-muted-foreground">
-              Passionnée par le numérique et convaincue qu'il doit être
-              accessible à tous, j'accompagne les seniors et les personnes en
-              difficulté numérique à La Rochelle et ses alentours.
+              Formée au développement web et passionnée par le numérique, j’ai
+              créé Virginie Assistance Numérique pour mettre mes compétences au
+              service des particuliers, des seniors et des professionnels de La
+              Rochelle et ses alentours.
             </p>
 
             <p className="mb-8 font-light leading-relaxed text-muted-foreground">
-              Mon approche : la{" "}
-              <strong className="font-normal text-foreground">
-                patience
-              </strong>
-              , la{" "}
-              <strong className="font-normal text-foreground">
-                douceur
-              </strong>{" "}
-              et la{" "}
-              <strong className="font-normal text-foreground">
-                bienveillance
-              </strong>
-              . Je prends le temps qu'il faut pour que vous compreniez et que
-              vous soyez autonome. Pas de jargon, pas de jugement — juste un
-              vrai accompagnement humain.
+              Je vous aide à résoudre un blocage, prendre en main un outil ou
+              structurer un projet numérique, avec des explications concrètes
+              et adaptées à votre situation.
             </p>
-
-            <div className="mb-8 grid grid-cols-2 gap-4">
-              {values.map((value) => (
-                <div
-                  key={value.label}
-                  className="flex items-center gap-3 rounded-2xl border border-border bg-white px-4 py-3 shadow-sm"
-                >
-                  <span className="text-lg text-primary">
-                    {value.icon}
-                  </span>
-
-                  <span className="text-sm font-light text-foreground">
-                    {value.label}
-                  </span>
-                </div>
-              ))}
-            </div>
 
             <a
               href="#contact"
