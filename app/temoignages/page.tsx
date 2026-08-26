@@ -5,7 +5,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 
 export const metadata: Metadata = {
-  title: "Témoignages et résultats | Virginie Assistance Numérique",
+  title: "Témoignages et résultats",
   description: "Découvrez les situations concrètes dans lesquelles Virginie Assistance Numérique accompagne particuliers, seniors, artisans et créateurs de micro-entreprise à La Rochelle.",
   alternates: { canonical: "https://virginieassistance.fr/temoignages" },
 };

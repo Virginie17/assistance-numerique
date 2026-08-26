@@ -5,7 +5,6 @@ import TargetChoiceSection from "@/components/landing/TargetChoiceSection";
 import ServicesSection from "@/components/landing/ServicesSection";
 import ProfessionalSection from "@/components/landing/ProfessionalSection";
 import AboutSection from "@/components/landing/AboutSection";
-import BenefitsSection from "@/components/landing/BenefitsSection";
 import PricingSection from "@/components/landing/PricingSection";
 import AreaSection from "@/components/landing/AreaSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
@@ -23,7 +22,6 @@ export default function Home() {
       <ServicesSection />
       <ProfessionalSection />
       <AboutSection />
-      <BenefitsSection />
       <PricingSection />
       <AreaSection />
       <TestimonialsSection />
