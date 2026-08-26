@@ -85,16 +85,16 @@ export default function ProfessionalSection() {
             <div className="rounded-[2rem] bg-primary p-8 text-white shadow-xl shadow-primary/20">
               <ReceiptText className="mb-5 h-10 w-10" />
               <h3 className="font-serif text-3xl font-medium">
-                Pack Sérénité Facturation
+                3 packs Facturation électronique
               </h3>
               <p className="mt-4 font-light leading-relaxed text-white/85">
-                Un accompagnement humain pour être prêt(e), gagner du temps et éviter les erreurs.
+                De la compréhension de la réforme jusqu’au paramétrage complet de votre outil, choisissez le niveau d’accompagnement adapté à votre besoin.
               </p>
               <div className="mt-6 rounded-2xl bg-white/15 p-5">
-                <p className="text-sm font-light text-white/70">À partir de</p>
-                <p className="font-serif text-5xl font-medium">97€</p>
+                <p className="text-sm font-light text-white/70">3 formules claires à partir de</p>
+                <p className="font-serif text-5xl font-medium">97 €</p>
                 <p className="mt-1 text-sm font-light text-white/70">
-                  selon votre niveau de besoin
+                  Découverte · Installation · Sérénité
                 </p>
               </div>
             </div>

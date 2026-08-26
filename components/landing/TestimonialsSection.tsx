@@ -1,27 +1,20 @@
-const testimonials = [
+import { ArrowRight, BadgeEuro, HeartHandshake, ShieldCheck } from "lucide-react";
+
+const trustPoints = [
   {
-    name: "Marie-Thérèse D.",
-    role: "Retraitée, 73 ans · La Rochelle",
-    text:
-      "Virginie est venue chez moi et m'a aidée à faire ma déclaration d'impôts en ligne. Elle a été tellement patiente ! Maintenant je me sens plus à l'aise avec mon ordinateur.",
+    icon: HeartHandshake,
+    title: "Un accompagnement humain",
+    text: "Je m’adapte à votre niveau et à votre rythme, avec patience, écoute et des explications sans jargon.",
   },
   {
-    name: "Robert L.",
-    role: "Retraité · Lagord",
-    text:
-      "Je ne savais pas utiliser mon nouveau smartphone. Virginie m'a tout montré sans se moquer, en recommençant autant de fois que nécessaire. Je recommande vivement.",
+    icon: BadgeEuro,
+    title: "Un tarif clair avant de commencer",
+    text: "Le prix, le contenu et les limites de l’intervention sont annoncés avant votre engagement, sans mauvaise surprise.",
   },
   {
-    name: "Jacqueline M.",
-    role: "Particulière · Aytré",
-    text:
-      "Elle a sécurisé mon ordinateur et m'a expliqué comment reconnaître les arnaques. Tout s'est passé à distance, très simplement. Une vraie perle de bienveillance.",
-  },
-  {
-    name: "Christine B.",
-    role: "Indépendante · Châtelaillon",
-    text:
-      "J'avais peur du numérique. Grâce à Virginie, je fais mes démarches CAF toute seule maintenant. Son calme et sa douceur m'ont redonné confiance.",
+    icon: ShieldCheck,
+    title: "Vous gardez toujours le contrôle",
+    text: "Je vous guide pas à pas : vous restez maître de vos comptes, de vos informations et de vos validations personnelles.",
   },
 ];
 
@@ -31,55 +24,51 @@ export default function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-2 font-script text-2xl text-primary">
-            Ils me font confiance
+            Une relation de confiance
           </p>
 
           <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
-            Ce que disent{" "}
+            Mes engagements pour un accompagnement{" "}
             <span className="italic text-accent">
-              mes clients
+              serein
             </span>
           </h2>
+          <p className="mt-4 font-light leading-relaxed text-muted-foreground">
+            Des engagements concrets et transparents pour vous aider à avancer en confiance.
+          </p>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          {testimonials.map((testimonial) => (
+        <div className="grid gap-6 md:grid-cols-3">
+          {trustPoints.map((item) => {
+            const Icon = item.icon;
+
+            return (
             <article
-              key={testimonial.name}
-              className="relative rounded-3xl border border-border bg-card p-7 transition-all duration-300 hover:border-primary/20 hover:shadow-md"
+              key={item.title}
+              className="rounded-3xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-md"
             >
-              {/* Decorative quote */}
-              <div className="absolute right-6 top-5 font-serif text-3xl text-primary/15">
-                "
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                <Icon className="h-7 w-7" />
               </div>
-
-              {/* Rating hearts */}
-              <div className="mb-4 flex gap-1">
-                {[...Array(5)].map((_, index) => (
-                  <span
-                    key={index}
-                    className="text-sm text-primary"
-                  >
-                    ♡
-                  </span>
-                ))}
-              </div>
-
-              <p className="mb-6 font-light italic leading-relaxed text-foreground">
-                "{testimonial.text}"
+              <h3 className="mt-5 font-serif text-2xl font-medium text-foreground">
+                {item.title}
+              </h3>
+              <p className="mt-3 font-light leading-relaxed text-muted-foreground">
+                {item.text}
               </p>
-
-              <div className="border-t border-border pt-4">
-                <p className="font-serif text-sm font-medium text-foreground">
-                  {testimonial.name}
-                </p>
-
-                <p className="mt-0.5 text-xs font-light text-muted-foreground">
-                  {testimonial.role}
-                </p>
-              </div>
             </article>
-          ))}
+            );
+          })}
+        </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="/temoignages"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 bg-card px-7 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/10"
+          >
+            Découvrir les résultats recherchés
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
