@@ -65,10 +65,10 @@ export default function ProfessionalSection() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="/facturation-electronique"
+                href="/professionnels#facturation-decouverte"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3 text-sm font-light text-white shadow-lg shadow-primary/20 transition-colors hover:bg-primary"
               >
-                Découvrir l'accompagnement
+                Comparer les 3 packs
                 <ArrowRight className="h-4 w-4" />
               </a>
 

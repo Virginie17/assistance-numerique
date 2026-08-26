@@ -69,12 +69,12 @@ export default function TargetChoiceSection() {
                 <CreditCard className="mt-1 h-5 w-5 shrink-0 text-primary" />
                 <div>
                   <p className="font-serif text-xl font-medium text-foreground">Paiements acceptés</p>
-                  <p className="mt-1 text-sm font-light leading-relaxed text-muted-foreground">CESU, carte bancaire ou virement bancaire selon votre préférence.</p>
+                  <p className="mt-1 text-sm font-light leading-relaxed text-muted-foreground">Espèces, carte bancaire ou virement bancaire selon votre préférence.</p>
                 </div>
               </div>
             </div>
-            <a href="#services" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
-              Voir l’aide pour particuliers <Heart className="h-4 w-4" />
+            <a href="/particuliers-seniors" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
+              Découvrir les offres particuliers <Heart className="h-4 w-4" />
             </a>
           </article>
 
@@ -108,8 +108,8 @@ export default function TargetChoiceSection() {
                 </div>
               </div>
             </div>
-            <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary">
-              Demander un devis professionnel <ArrowRight className="h-4 w-4" />
+            <a href="/professionnels" className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary">
+              Découvrir les offres professionnelles <ArrowRight className="h-4 w-4" />
             </a>
           </article>
         </div>

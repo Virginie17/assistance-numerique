@@ -55,11 +55,11 @@ export default function Footer() {
             <h4 className="mb-4 font-serif text-sm font-medium text-white">Services</h4>
             <ul className="space-y-2.5 text-sm font-light text-white/50">
               <li><a href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit aidant numérique</a></li>
-              <li><a href="/#particuliers" className="transition-colors hover:text-white/80">Particuliers & seniors</a></li>
+              <li><a href="/particuliers-seniors" className="transition-colors hover:text-white/80">Particuliers & seniors</a></li>
               <li><a href="/#services" className="transition-colors hover:text-white/80">Démarches en ligne</a></li>
               <li><a href="/#services" className="transition-colors hover:text-white/80">Ordinateur & emails</a></li>
               <li><a href="/#services" className="transition-colors hover:text-white/80">Sécurité & arnaques</a></li>
-              <li><a href="/#professionnels" className="transition-colors hover:text-white/80">Professionnels</a></li>
+              <li><a href="/professionnels" className="transition-colors hover:text-white/80">Professionnels</a></li>
               <li><a href="/facturation-electronique" className="transition-colors hover:text-white/80">Facturation électronique</a></li>
             </ul>
           </div>
@@ -68,8 +68,8 @@ export default function Footer() {
             <h4 className="mb-4 font-serif text-sm font-medium text-white">Navigation</h4>
             <ul className="space-y-2.5 text-sm font-light text-white/50">
               <li><a href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit</a></li>
-              <li><a href="/#particuliers" className="transition-colors hover:text-white/80">Particuliers</a></li>
-              <li><a href="/#professionnels" className="transition-colors hover:text-white/80">Professionnels</a></li>
+              <li><a href="/particuliers-seniors" className="transition-colors hover:text-white/80">Particuliers</a></li>
+              <li><a href="/professionnels" className="transition-colors hover:text-white/80">Professionnels</a></li>
               <li><a href="/#tarifs" className="transition-colors hover:text-white/80">Tarifs</a></li>
               <li><a href="/#zone" className="transition-colors hover:text-white/80">Zone d’intervention</a></li>
               <li><a href="/#contact" className="transition-colors hover:text-white/80">Contact</a></li>

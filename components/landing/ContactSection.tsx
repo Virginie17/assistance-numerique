@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Heart, Mail, MapPin } from "lucide-react";
 
 const INSTAGRAM_URL = "https://www.instagram.com/virginie_assistance_numerique";
@@ -73,6 +73,28 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const selectedOffer = params.get("offre")?.trim();
+    const selectedService = params.get("service")?.trim();
+
+    if (!selectedOffer) return;
+
+    const allowedService = serviceOptions.some((option) => option.value === selectedService)
+      ? selectedService || "autre"
+      : "autre";
+
+    const frame = window.requestAnimationFrame(() => {
+      setForm((current) => ({
+        ...current,
+        service: allowedService,
+        message: current.message || `Bonjour Virginie, je souhaite obtenir des informations sur l’offre « ${selectedOffer} ».`,
+      }));
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   const handleChange = (field: keyof FormState, value: string | boolean) => {
     setForm((prev) => ({ ...prev, [field]: value }));
@@ -161,7 +183,7 @@ export default function ContactSection() {
 
             <div className="hidden" aria-hidden="true">
               <label>
-                Site web de l'entreprise
+                Site web de l’entreprise
                 <input tabIndex={-1} autoComplete="off" value={form.company_website} onChange={(event) => handleChange("company_website", event.target.value)} />
               </label>
             </div>
