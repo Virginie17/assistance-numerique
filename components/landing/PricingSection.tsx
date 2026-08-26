@@ -1,18 +1,19 @@
-import { Building2, CreditCard, Heart, Info, ReceiptText } from "lucide-react";
+import { ArrowRight, Building2, Heart, Info } from "lucide-react";
+import { individualOffers, professionalOffers } from "@/lib/commercialOffers";
 
-const individualFeatures = [
-  "À domicile à La Rochelle et alentours",
-  "Assistance possible à distance",
-  "Explications simples, sans jargon",
-  "Idéal pour smartphone, ordinateur, emails et démarches en ligne",
-];
-
-const professionalFeatures = [
-  "Facturation électronique et outils numériques",
-  "Création ou amélioration de site internet",
-  "Organisation digitale et visibilité en ligne",
-  "Facture professionnelle fournie après prestation",
-];
+function PriceList({ offers, href, label }: { offers: typeof individualOffers; href: string; label: string }) {
+  return (
+    <div className="mt-7 space-y-2">
+      {offers.map((offer) => (
+        <a key={offer.slug} href={`${href}#${offer.slug}`} className="flex items-center justify-between gap-4 rounded-2xl border border-border bg-background px-4 py-3 transition hover:border-primary/30 hover:bg-secondary/70">
+          <span className="text-sm font-light text-foreground">{offer.title}</span>
+          <span className="shrink-0 text-sm font-bold text-accent">{offer.price}</span>
+        </a>
+      ))}
+      <a href={href} className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-bold text-white transition hover:bg-accent">{label}<ArrowRight className="h-4 w-4" /></a>
+    </div>
+  );
+}
 
 export default function PricingSection() {
   return (
@@ -20,121 +21,25 @@ export default function PricingSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-14 max-w-3xl text-center">
           <p className="mb-2 font-script text-2xl text-primary">Mes tarifs</p>
-
-          <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
-            Des tarifs clairs,<br />
-            <span className="italic text-accent">selon votre profil</span>
-          </h2>
-
-          <p className="mt-4 text-lg font-light leading-relaxed text-muted-foreground">
-            Je distingue clairement les accompagnements pour particuliers et seniors des prestations professionnelles réalisées via ma micro-entreprise.
-          </p>
+          <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">Des offres claires,<br /><span className="italic text-accent">selon votre besoin</span></h2>
+          <p className="mt-4 text-lg font-light leading-relaxed text-muted-foreground">Consultez les tarifs en un coup d’œil, puis ouvrez la fiche détaillée de l’accompagnement qui vous correspond.</p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
-          <article className="rounded-3xl border border-border bg-card p-8 shadow-xl shadow-primary/10">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
-              <Heart className="h-5 w-5" />
-            </div>
-
-            <p className="font-script text-2xl text-primary">Particuliers & seniors</p>
-            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Accompagnement numérique</h3>
-
-            <div className="mt-5 flex items-end gap-2">
-              <span className="font-serif text-6xl font-medium leading-none text-foreground">55€</span>
-              <span className="pb-2 text-lg font-light text-muted-foreground">/ heure</span>
-            </div>
-
-            <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground">
-              Pour une aide ponctuelle ou régulière avec vos appareils, vos comptes, vos emails ou vos démarches administratives en ligne.
-            </p>
-
-            <ul className="mt-7 space-y-3 text-sm font-light text-foreground">
-              {individualFeatures.map((feature) => (
-                <li key={feature}>♡ {feature}</li>
-              ))}
-            </ul>
-
-            <div className="mt-7 rounded-2xl border border-primary/15 bg-primary/10 p-5">
-              <div className="flex gap-3">
-                <CreditCard className="mt-1 h-5 w-5 shrink-0 text-primary" />
-                <p className="text-sm font-light leading-relaxed text-foreground">
-                  Paiement possible en espèces, carte bancaire ou virement bancaire.
-                </p>
-              </div>
-            </div>
-
-            <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-primary px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
-              Demander une aide ♡
-            </a>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <article className="rounded-3xl border border-border bg-card p-6 shadow-xl shadow-primary/10 sm:p-8">
+            <div className="flex items-center gap-4"><div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary"><Heart className="h-5 w-5" /></div><div><p className="font-script text-2xl text-primary">Particuliers & seniors</p><h3 className="font-serif text-2xl font-medium">5 accompagnements</h3></div></div>
+            <PriceList offers={individualOffers} href="/particuliers-seniors" label="Voir les offres particuliers" />
           </article>
 
-          <article className="rounded-3xl border border-accent/20 bg-white p-8 shadow-xl shadow-primary/5">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-accent/15 bg-accent/10 text-accent">
-              <Building2 className="h-5 w-5" />
-            </div>
-
-            <p className="font-script text-2xl text-primary">Professionnels</p>
-            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Pack Sérénité Pro</h3>
-
-            <div className="mt-5 flex items-end gap-2">
-              <span className="font-serif text-5xl font-medium leading-none text-foreground">297€</span>
-              <span className="pb-2 text-base font-light text-muted-foreground">à partir de</span>
-            </div>
-
-            <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground">
-              Un premier accompagnement professionnel pour clarifier vos besoins, structurer vos outils et préparer votre présence numérique.
-            </p>
-
-            <ul className="mt-7 space-y-3 text-sm font-light text-foreground">
-              {professionalFeatures.map((feature) => (
-                <li key={feature}>♡ {feature}</li>
-              ))}
-            </ul>
-
-            <div className="mt-7 rounded-2xl border border-accent/15 bg-accent/10 p-5">
-              <div className="flex gap-3">
-                <ReceiptText className="mt-1 h-5 w-5 shrink-0 text-accent" />
-                <p className="text-sm font-light leading-relaxed text-foreground">
-                  Facture professionnelle via ma micro-entreprise. Paiement par virement bancaire. Devis personnalisé selon votre besoin.
-                </p>
-              </div>
-            </div>
-
-            <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-accent px-7 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-primary">
-              Demander un devis pro
-            </a>
+          <article className="rounded-3xl border border-accent/20 bg-white p-6 shadow-xl shadow-primary/5 sm:p-8">
+            <div className="flex items-center gap-4"><div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent"><Building2 className="h-5 w-5" /></div><div><p className="font-script text-2xl text-primary">Professionnels</p><h3 className="font-serif text-2xl font-medium">10 solutions</h3></div></div>
+            <PriceList offers={professionalOffers} href="/professionnels" label="Voir les offres professionnelles" />
           </article>
+        </div>
 
-          <article className="rounded-3xl border border-border bg-card p-8">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full border border-primary/15 bg-primary/10 text-primary">
-              <Info className="h-5 w-5" />
-            </div>
-
-            <p className="font-script text-2xl text-primary">Premier échange</p>
-            <h3 className="mt-4 font-serif text-3xl font-medium text-foreground">Devis gratuit</h3>
-
-            <p className="mt-5 text-base font-light leading-relaxed text-muted-foreground">
-              Avant toute intervention, nous faisons le point sur votre besoin, votre situation et la solution la plus adaptée.
-            </p>
-
-            <ul className="mt-7 space-y-3 text-sm font-light text-foreground">
-              <li>♡ Échange simple et sans engagement</li>
-              <li>♡ Orientation vers la bonne formule</li>
-              <li>♡ Estimation claire avant intervention</li>
-              <li>♡ Réponse personnalisée selon votre profil</li>
-            </ul>
-
-            <div className="mt-7 rounded-2xl border border-primary/15 bg-primary/10 p-5">
-              <p className="text-sm font-light leading-relaxed text-foreground">
-                Les paiements des particuliers et les prestations professionnelles sont deux cadres différents. Je vous indique clairement la solution adaptée à votre demande.
-              </p>
-            </div>
-
-            <a href="#contact" className="mt-8 inline-flex w-full items-center justify-center rounded-full border border-primary/30 px-7 py-4 text-base font-light text-primary transition-all hover:bg-primary/10">
-              Poser ma question
-            </a>
-          </article>
+        <div className="mx-auto mt-8 flex max-w-4xl gap-4 rounded-3xl border border-primary/15 bg-white p-6 shadow-sm">
+          <Info className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+          <p className="text-sm font-light leading-7 text-muted-foreground"><strong className="text-foreground">Déplacements :</strong> inclus jusqu’à 10 km autour de Lagord. Participation forfaitaire de 5 € entre 10 et 20 km. Au-delà, intervention à distance ou devis personnalisé. Le montant total est toujours confirmé avant le rendez-vous.</p>
         </div>
       </div>
     </section>

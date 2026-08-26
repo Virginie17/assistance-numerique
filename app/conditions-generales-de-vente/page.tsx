@@ -53,7 +53,7 @@ export default function ConditionsGeneralesDeVentePage() {
           <article>
             <h2 className="font-serif text-2xl font-medium text-foreground">4. Modalités de paiement</h2>
             <div className="mt-4 space-y-2 text-sm font-light leading-relaxed text-muted-foreground">
-              <p>Pour les particuliers, les paiements peuvent être acceptés selon les modalités convenues : CESU, carte bancaire ou virement bancaire.</p>
+              <p>Pour les particuliers, les paiements peuvent être acceptés selon les modalités convenues : espèces, carte bancaire ou virement bancaire.</p>
               <p>Pour les professionnels, les prestations sont réalisées via la micro-entreprise, avec facture professionnelle et règlement par virement bancaire, sauf accord contraire écrit.</p>
             </div>
           </article>

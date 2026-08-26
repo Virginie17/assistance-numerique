@@ -49,7 +49,7 @@ export default function HeroSection() {
             <div className="mt-10 flex flex-wrap items-center gap-5 text-sm font-light text-muted-foreground">
               <span>♡ Patience & écoute</span>
               <span>•</span>
-              <span>♡ CESU, CB ou virement</span>
+              <span>♡ Espèces, CB ou virement</span>
               <span>•</span>
               <span>♡ Facture pro sur demande</span>
             </div>
