@@ -93,11 +93,11 @@ export const individualDigitalOffers: CommercialOffer[] = [
   },
   {
     slug: "demarches-en-ligne",
-    title: "Démarches en ligne",
+    title: "Démarche en ligne accompagnée",
     price: "55 €",
     duration: "1 heure",
     summary:
-      "Un accompagnement pas à pas pour comprendre et réaliser une démarche tout en restant maître de vos décisions.",
+      "Une aide pour utiliser le site administratif, saisir vos informations et transmettre vos pièces, en validant vous-même les envois.",
     idealFor:
       "Une aide avec Ameli, la CAF, les impôts, la retraite, France Titres ou un autre service administratif en ligne.",
     included: [
@@ -462,7 +462,8 @@ export const administrativeOffers: CommercialOffer[] = [
     title: "Coup de pouce administratif",
     price: "55 €",
     duration: "1 heure",
-    summary: "Un courrier ou une démarche précise à débloquer ensemble.",
+    summary:
+      "Comprendre un courrier, identifier les justificatifs et préparer une réponse ou un formulaire avec vous.",
     idealFor:
       "Comprendre un courrier, préparer une réponse ou remplir un formulaire.",
     included: [

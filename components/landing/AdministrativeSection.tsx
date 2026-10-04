@@ -20,7 +20,7 @@ export default function AdministrativeSection() {
         </p>
         <Link
           href="/assistance-administrative-la-rochelle"
-          className="mt-7 inline-flex rounded-full bg-primary px-7 py-4 font-bold text-white hover:bg-accent"
+          className="mt-7 inline-flex rounded-full bg-accent px-7 py-4 font-bold text-white hover:bg-foreground"
         >
           Découvrir l’assistance administrative
         </Link>

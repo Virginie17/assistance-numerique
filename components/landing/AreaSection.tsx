@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { MapPin } from "lucide-react";
 
 const AREA_IMAGE =
-  "https://media.base44.com/images/public/69edd9adb35526e88df2b7b9/9b0ebde5b_generated_a23774d2.png";
+  "/la-rochelle.webp";
 
 const zones = [
   "La Rochelle centre",
@@ -24,7 +25,7 @@ export default function AreaSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="relative overflow-hidden rounded-3xl shadow-xl shadow-primary/10">
-            <img
+            <Image width={1200} height={675} sizes="(min-width: 1024px) 50vw, 100vw"
               src={AREA_IMAGE}
               alt="Vue de La Rochelle - zone d'intervention Virginie Assistance Numérique"
               className="aspect-video w-full object-cover"
@@ -41,7 +42,7 @@ export default function AreaSection() {
               </div>
 
               <p className="mt-1 text-sm font-light text-white/80">
-                Rayon de 20 km autour de La Rochelle
+                Rayon de 20 km autour de Lagord
               </p>
             </div>
           </div>

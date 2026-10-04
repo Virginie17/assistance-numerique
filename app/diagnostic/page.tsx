@@ -1,13 +1,22 @@
+import { pageMetadata } from "@/lib/pageMetadata";
 import DiagnosticNumerique from "@/components/DiagnosticNumerique";
 import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
-import { CheckCircle2, Clock, Gift, HeartHandshake, MapPin, ShieldCheck, Sparkles } from "lucide-react";
+import {
+  CheckCircle2,
+  Clock,
+  Gift,
+  HeartHandshake,
+  MapPin,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 
-export const metadata = {
-  title: "Diagnostic numérique gratuit | Virginie Assistance Numérique",
-  description:
-    "Faites le point gratuitement sur votre situation numérique : seniors, aidants, particuliers, artisans et entrepreneurs à La Rochelle et alentours.",
-};
+export const metadata = pageMetadata(
+  "Diagnostic numérique gratuit",
+  "Faites le point gratuitement sur votre situation numérique : seniors, aidants, particuliers, artisans et entrepreneurs à La Rochelle et alentours.",
+  "/diagnostic",
+);
 
 const trustItems = [
   { label: "Gratuit", icon: Gift },
@@ -34,8 +43,9 @@ export default function DiagnosticPage() {
               Faites le point sur votre situation numérique
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-[#6f6268] md:text-xl">
-              En moins de 3 minutes, identifiez vos besoins prioritaires et découvrez
-              comment je peux vous accompagner avec simplicité, patience et sérénité.
+              En moins de 3 minutes, identifiez vos besoins prioritaires et
+              découvrez comment je peux vous accompagner avec simplicité,
+              patience et sérénité.
             </p>
           </div>
 
@@ -43,11 +53,16 @@ export default function DiagnosticPage() {
             {trustItems.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.label} className="flex items-center gap-3 rounded-2xl border border-rose-100 bg-white/80 px-4 py-3 shadow-sm shadow-rose-100/40">
+                <div
+                  key={item.label}
+                  className="flex items-center gap-3 rounded-2xl border border-rose-100 bg-white/80 px-4 py-3 shadow-sm shadow-rose-100/40"
+                >
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#f7e8e9] text-[#c9797f]">
                     <Icon className="h-5 w-5" />
                   </span>
-                  <span className="text-sm font-bold text-[#4f4449]">{item.label}</span>
+                  <span className="text-sm font-bold text-[#4f4449]">
+                    {item.label}
+                  </span>
                 </div>
               );
             })}
@@ -62,13 +77,23 @@ export default function DiagnosticPage() {
                 Pourquoi faire ce diagnostic ?
               </h2>
               <p className="mt-4 leading-relaxed text-[#6f6268]">
-                Ce diagnostic vous aide à comprendre ce qui vous fait perdre du temps,
-                vous stresse ou vous empêche d’être autonome avec le numérique.
+                Ce diagnostic vous aide à comprendre ce qui vous fait perdre du
+                temps, vous stresse ou vous empêche d’être autonome avec le
+                numérique.
               </p>
               <ul className="mt-5 space-y-3 text-[#5f5358]">
-                <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />Identifier vos blocages prioritaires.</li>
-                <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />Obtenir un résultat clair immédiatement.</li>
-                <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />Savoir par où commencer, sans pression.</li>
+                <li className="flex gap-2">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />
+                  Identifier vos blocages prioritaires.
+                </li>
+                <li className="flex gap-2">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />
+                  Obtenir un résultat clair immédiatement.
+                </li>
+                <li className="flex gap-2">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />
+                  Savoir par où commencer, sans pression.
+                </li>
               </ul>
             </div>
 
@@ -80,13 +105,14 @@ export default function DiagnosticPage() {
                 Un accompagnement local et humain
               </h2>
               <p className="mt-4 leading-relaxed text-rose-50/90">
-                J’accompagne les seniors, aidants, particuliers, artisans et entrepreneurs
-                à La Rochelle et alentours, à domicile ou à distance.
+                J’accompagne les seniors, aidants, particuliers, artisans et
+                entrepreneurs à La Rochelle et alentours, à domicile ou à
+                distance.
               </p>
               <p className="mt-5 rounded-2xl bg-white/10 p-4 text-sm leading-relaxed text-rose-50/90">
-                Vous êtes artisan ou entrepreneur ? Ce diagnostic peut vous aider à
-                comprendre pourquoi votre visibilité en ligne ne vous apporte pas assez
-                d’appels, de devis ou de clients.
+                Vous êtes artisan ou entrepreneur ? Ce diagnostic peut vous
+                aider à comprendre pourquoi votre visibilité en ligne ne vous
+                apporte pas assez d’appels, de devis ou de clients.
               </p>
             </div>
           </div>

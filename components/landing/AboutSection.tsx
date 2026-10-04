@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-const PORTRAIT_URL =
-  "/virginie.webp";
+const PORTRAIT_URL = "/virginie.webp";
 
 export default function AboutSection() {
   return (
@@ -17,7 +16,8 @@ export default function AboutSection() {
               {/* Portrait */}
               <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white shadow-xl shadow-primary/10 sm:h-72 sm:w-72">
                 <Image
-                  fill sizes="(min-width: 640px) 288px, 256px"
+                  fill
+                  sizes="(min-width: 640px) 288px, 256px"
                   src={PORTRAIT_URL}
                   alt="Virginie, votre assistante numérique à La Rochelle"
                   className="h-full w-full object-cover object-top"
@@ -39,24 +39,26 @@ export default function AboutSection() {
 
             <h2 className="mb-5 font-serif text-3xl font-medium text-foreground sm:text-4xl">
               Bonjour, je suis{" "}
-              <span className="italic text-accent">
-                Virginie
-              </span>
+              <span className="italic text-accent">Virginie</span>
             </h2>
 
             <p className="mb-4 font-light leading-relaxed text-muted-foreground">
-              Mon parcours associe expérience administrative et formation au développement web. J’ai créé Virginie Assistance pour aider les particuliers, seniors, aidants et professionnels de La Rochelle et ses alentours à simplifier leurs démarches et leur quotidien numérique.
+              Mon parcours associe expérience administrative et formation au
+              développement web. J’ai créé Virginie Assistance pour aider les
+              particuliers, seniors, aidants et professionnels de La Rochelle et
+              ses alentours à simplifier leurs démarches et leur quotidien
+              numérique.
             </p>
 
             <p className="mb-8 font-light leading-relaxed text-muted-foreground">
-              Je vous aide à résoudre un blocage, prendre en main un outil ou
-              organiser vos dossiers ou structurer un projet numérique, avec des explications concrètes
-              et adaptées à votre situation.
+              Je vous aide à résoudre un blocage, prendre en main un outil,
+              organiser vos dossiers ou structurer un projet numérique, avec des
+              explications concrètes et adaptées à votre situation.
             </p>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-base font-light text-white transition-all hover:bg-accent"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-base font-light text-white transition-all hover:bg-foreground"
             >
               Me contacter ♡
             </a>
