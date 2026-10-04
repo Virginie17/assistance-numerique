@@ -47,7 +47,7 @@ export default function MentionsLegalesPage() {
           <article>
             <h2 className="font-serif text-2xl font-medium text-foreground">Activité</h2>
             <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
-              Virginie Assistance Numérique propose des prestations d’assistance numérique, d’accompagnement informatique, d’aide aux démarches en ligne, de sensibilisation à la sécurité numérique, ainsi que des services numériques destinés aux professionnels, artisans, auto-entrepreneurs et petites entreprises.
+              Virginie Assistance Numérique propose des prestations d’assistance numérique, d’accompagnement informatique, d’assistance administrative à domicile (courriers, préparation de dossiers, classement et suivi), d’aide aux démarches en ligne, de sensibilisation à la sécurité numérique, ainsi que des services numériques destinés aux professionnels, artisans, auto-entrepreneurs et petites entreprises.
             </p>
           </article>
 

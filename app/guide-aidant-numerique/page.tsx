@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowRight, CheckCircle2, Download, Heart, Mail, ShieldCheck } from "lucide-react";
@@ -44,9 +45,9 @@ export default function GuideAidantNumeriquePage() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
 
-                <a href="/#contact" className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-white/50 px-8 py-4 text-base font-light text-accent transition-all hover:bg-primary/10">
+                <Link href="/#contact" className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-white/50 px-8 py-4 text-base font-light text-accent transition-all hover:bg-primary/10">
                   Demander un accompagnement
-                </a>
+                </Link>
               </div>
 
               <p className="mt-5 text-sm font-light text-muted-foreground">

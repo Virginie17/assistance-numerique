@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import { Mail, MapPin } from "lucide-react";
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -28,19 +30,19 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/20">
-                <img src="/logo.png" alt="Logo Virginie Assistance Numérique" className="h-5 w-5 object-contain" />
+                <Image width={20} height={20} src="/logo.png" alt="Logo Virginie Assistance" className="h-5 w-5 object-contain" />
               </div>
 
               <div>
                 <span className="block font-script text-lg leading-tight text-white">Virginie</span>
-                <span className="text-[10px] font-light uppercase tracking-widest text-white/50">Assistance Numérique</span>
+                <span className="text-[10px] font-light uppercase tracking-widest text-white/50">Assistance</span>
               </div>
             </div>
 
-            <p className="mb-2 font-script text-base text-primary/70">La sérénité numérique</p>
+            <p className="mb-2 font-script text-base text-primary/70">La sérénité numérique et administrative</p>
 
             <p className="mb-4 max-w-xs text-sm font-light leading-relaxed text-white/50">
-              J'accompagne seniors, particuliers et professionnels à La Rochelle et alentours, avec douceur et patience, à domicile ou à distance.
+              J’accompagne seniors, particuliers et professionnels à La Rochelle et alentours, avec douceur et patience, à domicile ou à distance.
             </p>
 
             <p className="mb-4 text-xs font-light text-white/40">Micro-entreprise · SIRET : 933 304 800 00024</p>
@@ -54,27 +56,28 @@ export default function Footer() {
           <div>
             <h4 className="mb-4 font-serif text-sm font-medium text-white">Services</h4>
             <ul className="space-y-2.5 text-sm font-light text-white/50">
-              <li><a href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit aidant numérique</a></li>
-              <li><a href="/particuliers-seniors" className="transition-colors hover:text-white/80">Particuliers & seniors</a></li>
-              <li><a href="/#services" className="transition-colors hover:text-white/80">Démarches en ligne</a></li>
-              <li><a href="/#services" className="transition-colors hover:text-white/80">Ordinateur & emails</a></li>
-              <li><a href="/#services" className="transition-colors hover:text-white/80">Sécurité & arnaques</a></li>
-              <li><a href="/professionnels" className="transition-colors hover:text-white/80">Professionnels</a></li>
-              <li><a href="/facturation-electronique" className="transition-colors hover:text-white/80">Facturation électronique</a></li>
+              <li><Link href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit aidant numérique</Link></li>
+              <li><Link href="/particuliers-seniors" className="transition-colors hover:text-white/80">Particuliers & seniors</Link></li>
+              <li><Link href="/assistance-administrative-la-rochelle" className="transition-colors hover:text-white/80">Assistance administrative</Link></li>
+              <li><Link href="/#services" className="transition-colors hover:text-white/80">Ordinateur & emails</Link></li>
+              <li><Link href="/#services" className="transition-colors hover:text-white/80">Sécurité & arnaques</Link></li>
+              <li><Link href="/professionnels" className="transition-colors hover:text-white/80">Professionnels</Link></li>
+              <li><Link href="/facturation-electronique" className="transition-colors hover:text-white/80">Facturation électronique</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="mb-4 font-serif text-sm font-medium text-white">Navigation</h4>
             <ul className="space-y-2.5 text-sm font-light text-white/50">
-              <li><a href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit</a></li>
-              <li><a href="/particuliers-seniors" className="transition-colors hover:text-white/80">Particuliers</a></li>
-              <li><a href="/professionnels" className="transition-colors hover:text-white/80">Professionnels</a></li>
-              <li><a href="/#tarifs" className="transition-colors hover:text-white/80">Tarifs</a></li>
-              <li><a href="/#zone" className="transition-colors hover:text-white/80">Zone d’intervention</a></li>
-              <li><a href="/#contact" className="transition-colors hover:text-white/80">Contact</a></li>
-              <li><a href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</a></li>
-              <li><a href="/conditions-generales-de-vente" className="transition-colors hover:text-white/80">CGV</a></li>
+              <li><Link href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit</Link></li>
+              <li><Link href="/particuliers-seniors" className="transition-colors hover:text-white/80">Particuliers</Link></li>
+              <li><Link href="/professionnels" className="transition-colors hover:text-white/80">Professionnels</Link></li>
+              <li><Link href="/#tarifs" className="transition-colors hover:text-white/80">Tarifs</Link></li>
+              <li><Link href="/#zone" className="transition-colors hover:text-white/80">Zone d’intervention</Link></li>
+              <li><Link href="/#contact" className="transition-colors hover:text-white/80">Contact</Link></li>
+              <li><Link href="/blog" className="transition-colors hover:text-white/80">Blog</Link></li>
+              <li><Link href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</Link></li>
+              <li><Link href="/conditions-generales-de-vente" className="transition-colors hover:text-white/80">CGV</Link></li>
             </ul>
           </div>
 
@@ -95,7 +98,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-xs font-light text-white/40">
-          © {currentYear} Virginie Assistance Numérique — Tous droits réservés · <a href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit</a> · <a href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</a> · <a href="/conditions-generales-de-vente" className="transition-colors hover:text-white/80">CGV</a>
+          © {currentYear} Virginie Assistance — Tous droits réservés · <Link href="/guide-aidant-numerique" className="transition-colors hover:text-white/80">Guide gratuit</Link> · <Link href="/mentions-legales" className="transition-colors hover:text-white/80">Mentions légales</Link> · <Link href="/conditions-generales-de-vente" className="transition-colors hover:text-white/80">CGV</Link>
         </div>
       </div>
     </footer>

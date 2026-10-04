@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PORTRAIT_URL =
   "/virginie.webp";
 
@@ -14,7 +16,8 @@ export default function AboutSection() {
 
               {/* Portrait */}
               <div className="relative h-64 w-64 overflow-hidden rounded-full border-4 border-white shadow-xl shadow-primary/10 sm:h-72 sm:w-72">
-                <img
+                <Image
+                  fill sizes="(min-width: 640px) 288px, 256px"
                   src={PORTRAIT_URL}
                   alt="Virginie, votre assistante numérique à La Rochelle"
                   className="h-full w-full object-cover object-top"
@@ -42,15 +45,12 @@ export default function AboutSection() {
             </h2>
 
             <p className="mb-4 font-light leading-relaxed text-muted-foreground">
-              Formée au développement web et passionnée par le numérique, j’ai
-              créé Virginie Assistance Numérique pour mettre mes compétences au
-              service des particuliers, des seniors et des professionnels de La
-              Rochelle et ses alentours.
+              Mon parcours associe expérience administrative et formation au développement web. J’ai créé Virginie Assistance pour aider les particuliers, seniors, aidants et professionnels de La Rochelle et ses alentours à simplifier leurs démarches et leur quotidien numérique.
             </p>
 
             <p className="mb-8 font-light leading-relaxed text-muted-foreground">
               Je vous aide à résoudre un blocage, prendre en main un outil ou
-              structurer un projet numérique, avec des explications concrètes
+              organiser vos dossiers ou structurer un projet numérique, avec des explications concrètes
               et adaptées à votre situation.
             </p>
 

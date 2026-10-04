@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Particuliers & seniors", href: "/particuliers-seniors" },
+  { label: "Numérique", href: "/particuliers-seniors" },
+  { label: "Administratif", href: "/assistance-administrative-la-rochelle" },
   { label: "Professionnels", href: "/professionnels" },
   { label: "Tarifs", href: "/#tarifs" },
   { label: "Témoignages", href: "/temoignages" },
-  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -25,14 +26,14 @@ function InstagramIcon({ className }: { className?: string }) {
 
 function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Accueil Virginie Assistance Numérique">
+    <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Accueil Virginie Assistance">
       <div className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-white shadow-sm">
-        <img src="/logo.png" alt="Logo Virginie Assistance Numérique" className="h-8 w-8 object-contain" />
+        <Image width={32} height={32} src="/logo.png" alt="Logo Virginie Assistance" className="h-8 w-8 object-contain" />
       </div>
 
       <div className="leading-tight">
         <span className="block font-script text-2xl leading-tight text-primary">Virginie</span>
-        <span className="-mt-0.5 block font-sans text-[10px] uppercase tracking-widest text-muted-foreground">Assistance Numérique</span>
+        <span className="-mt-0.5 block font-sans text-[10px] uppercase tracking-widest text-muted-foreground">Assistance · Numérique & administratif</span>
       </div>
     </Link>
   );
@@ -69,7 +70,7 @@ export default function Navbar() {
             <Link href="/#contact" className="rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-accent">Prendre contact</Link>
           </div>
 
-          <button type="button" onClick={() => setIsOpen((prev) => !prev)} aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"} className="p-2 text-foreground lg:hidden">
+          <button type="button" onClick={() => setIsOpen((prev) => !prev)} aria-expanded={isOpen} aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"} className="p-2 text-foreground lg:hidden">
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>

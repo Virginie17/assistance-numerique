@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowRight, Download, Heart } from "lucide-react";
@@ -26,15 +27,15 @@ export default function GuideMerciPage() {
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <a href="/guide-aidant-numerique.pdf" download className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
+            <Link href="/guide-aidant-numerique.pdf" download className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
               <Download className="mr-2 h-5 w-5" />
               Télécharger le PDF
-            </a>
+            </Link>
 
-            <a href="/#contact" className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-white/50 px-8 py-4 text-base font-light text-accent transition-all hover:bg-primary/10">
+            <Link href="/#contact" className="inline-flex items-center justify-center rounded-full border border-primary/30 bg-white/50 px-8 py-4 text-base font-light text-accent transition-all hover:bg-primary/10">
               Demander un accompagnement
               <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            </Link>
           </div>
 
           <p className="mt-8 text-sm font-light text-muted-foreground">

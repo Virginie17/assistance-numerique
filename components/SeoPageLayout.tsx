@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { ArrowRight, Check, Mail, MapPin, Star } from "lucide-react";
+import Footer from "@/components/landing/Footer";
 import Navbar from "@/components/landing/Navbar";
 
 export type SeoCard = {
@@ -17,6 +18,8 @@ export default function SeoPageLayout({
   eyebrow,
   title,
   description,
+  primaryHref = "/#contact",
+  secondaryHref = "/#tarifs",
   primaryCta = "Me contacter",
   secondaryCta = "Voir les offres",
   cards,
@@ -27,6 +30,8 @@ export default function SeoPageLayout({
   eyebrow: string;
   title: string;
   description: string;
+  primaryHref?: string;
+  secondaryHref?: string;
   primaryCta?: string;
   secondaryCta?: string;
   cards: SeoCard[];
@@ -45,10 +50,10 @@ export default function SeoPageLayout({
           <h1 className="mt-4 font-serif text-5xl font-semibold leading-tight md:text-7xl">{title}</h1>
           <p className="mx-auto mt-6 max-w-3xl text-xl leading-9 text-muted-foreground">{description}</p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="/#contact" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-bold uppercase tracking-[0.22em] text-white shadow-xl shadow-primary/25 transition hover:bg-accent">
+            <a href={primaryHref} className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-bold uppercase tracking-[0.22em] text-white shadow-xl shadow-primary/25 transition hover:bg-accent">
               {primaryCta} <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="/#offres" className="inline-flex h-14 items-center justify-center rounded-full border border-primary/25 bg-white px-8 text-sm font-bold uppercase tracking-[0.22em] text-accent transition hover:bg-secondary">
+            <a href={secondaryHref} className="inline-flex h-14 items-center justify-center rounded-full border border-primary/25 bg-white px-8 text-sm font-bold uppercase tracking-[0.22em] text-accent transition hover:bg-secondary">
               {secondaryCta}
             </a>
           </div>
@@ -126,7 +131,7 @@ export default function SeoPageLayout({
           <p className="font-script text-4xl">Prête à vous aider</p>
           <h2 className="mt-3 font-serif text-4xl font-semibold md:text-5xl">Expliquez-moi votre besoin, je vous réponds simplement.</h2>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <a href="/#contact" className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-bold uppercase tracking-[0.22em] text-white transition hover:bg-accent">
+            <a href={primaryHref} className="inline-flex h-14 items-center justify-center gap-2 rounded-full bg-primary px-8 text-sm font-bold uppercase tracking-[0.22em] text-white transition hover:bg-accent">
               Demander un échange <ArrowRight className="h-4 w-4" />
             </a>
             <a href="mailto:virginie.assistancenumerique@gmail.com" className="inline-flex h-14 items-center justify-center gap-2 rounded-full border border-white/25 px-8 text-sm font-bold uppercase tracking-[0.22em] text-white transition hover:bg-white/10">
@@ -136,6 +141,7 @@ export default function SeoPageLayout({
           <p className="mt-6 flex items-center justify-center gap-2 text-sm text-white/75"><MapPin className="h-4 w-4" /> La Rochelle et alentours</p>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
