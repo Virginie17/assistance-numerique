@@ -58,8 +58,7 @@ export default function AreaSection() {
             </h2>
 
             <p className="mb-8 text-lg font-light leading-relaxed text-muted-foreground">
-              Je me déplace à domicile dans un rayon de 20 km autour de La
-              Rochelle. Pour les communes plus éloignées, je propose une
+              Je me déplace à domicile dans un rayon de 20 km autour de Lagord. Pour les communes plus éloignées, je propose une
               assistance à distance efficace et chaleureuse.
             </p>
 
@@ -90,3 +89,4 @@ export default function AreaSection() {
     </section>
   );
 }
+
