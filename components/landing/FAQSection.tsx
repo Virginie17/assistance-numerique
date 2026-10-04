@@ -3,8 +3,16 @@
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
-  { question: "Pouvez-vous m’aider avec mes papiers et dossiers ?", answer: "Oui : courriers, formulaires, préparation de dossiers, classement et suivi limité à l’offre choisie. Vous fournissez les informations et validez les envois. Je ne dispense pas de conseil juridique, fiscal ou comptable." },
-  { question: "Puis-je demander de l’aide pour un parent ?", answer: "Oui, avec son accord. Nous définissons ensemble le besoin et les modalités. Les documents et informations de votre parent restent confidentiels ; aucun partage avec un proche n’est automatique." },
+  {
+    question: "Pouvez-vous m’aider avec mes papiers et dossiers ?",
+    answer:
+      "Oui : courriers, formulaires, préparation de dossiers, classement et suivi limité à l’offre choisie. Vous fournissez les informations et validez les envois. Je ne dispense pas de conseil juridique, fiscal ou comptable.",
+  },
+  {
+    question: "Puis-je demander de l’aide pour un parent ?",
+    answer:
+      "Oui, avec son accord. Nous définissons ensemble le besoin et les modalités. Les documents et informations de votre parent restent confidentiels ; aucun partage avec un proche n’est automatique.",
+  },
   {
     question: "Faut-il être « doué » en informatique pour faire appel à vous ?",
     answer:
@@ -13,7 +21,7 @@ const faqs = [
   {
     question: "Venez-vous vraiment à domicile ?",
     answer:
-      "Oui, tout à fait ! Je me déplace à votre domicile à La Rochelle et dans un rayon de 20 km autour de la ville. Pour les personnes plus éloignées, je propose une assistance à distance par partage d'écran, simple, sécurisée et très efficace.",
+      "Oui, tout à fait ! Je me déplace à votre domicile à La Rochelle et dans un rayon de 20 km autour de Lagord. Pour les personnes plus éloignées, je propose une assistance à distance par partage d'écran, simple, sécurisée et très efficace.",
   },
   {
     question: "Combien ça coûte ?",

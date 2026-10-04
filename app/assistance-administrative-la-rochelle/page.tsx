@@ -1,18 +1,14 @@
+import { pageMetadata } from "@/lib/pageMetadata";
 import Link from "next/link";
-import type { Metadata } from "next";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { CatalogueIntro, OfferCard } from "@/components/offers/OfferCatalogue";
 import { administrativeOffers } from "@/lib/commercialOffers";
-export const metadata: Metadata = {
-  title: "Assistance administrative à domicile à La Rochelle",
-  description:
-    "Courriers, dossiers, démarches CAF, Ameli, retraite et classement : Virginie vous accompagne personnellement à domicile à La Rochelle et autour de Lagord.",
-  alternates: {
-    canonical:
-      "https://virginieassistance.fr/assistance-administrative-la-rochelle",
-  },
-};
+export const metadata = pageMetadata(
+  "Assistance administrative à domicile à La Rochelle",
+  "Courriers, dossiers, démarches CAF, Ameli, retraite et classement : Virginie vous accompagne personnellement à domicile à La Rochelle et autour de Lagord.",
+  "/assistance-administrative-la-rochelle",
+);
 const situations = [
   [
     "Courriers et formulaires",
@@ -40,6 +36,24 @@ export default function AdministrativePage() {
         title="Assistance administrative à domicile à La Rochelle"
         description="Un courrier que vous ne comprenez pas ? Un dossier à constituer ? Je vous aide à organiser vos documents, préparer vos démarches et avancer étape par étape, tout en vous laissant la maîtrise de vos décisions et validations."
       />
+      <div className="mx-auto max-w-5xl px-6">
+        <Link
+          href="/?service=demarches_administratives#contact"
+          className="inline-flex rounded-full bg-accent px-6 py-3 font-bold text-white"
+        >
+          Je ne sais pas quelle formule choisir
+        </Link>
+        <p className="mt-4 text-sm leading-7">
+          Besoin uniquement d’aide pour utiliser un site et transmettre des
+          pièces ?{" "}
+          <Link
+            href="/particuliers-seniors#demarches-en-ligne"
+            className="font-bold text-accent underline"
+          >
+            Voir la démarche en ligne accompagnée.
+          </Link>
+        </p>
+      </div>
       <section className="mx-auto max-w-5xl px-6 py-12">
         <h2 className="font-serif text-3xl">
           Dans quelles situations puis-je vous aider ?
@@ -112,6 +126,40 @@ export default function AdministrativePage() {
         >
           Parlons de votre besoin
         </Link>
+      </section>
+      <section className="mx-auto max-w-5xl px-6 pb-14">
+        <h2 className="font-serif text-3xl">Avant le rendez-vous</h2>
+        <p className="mt-4 leading-7 text-muted-foreground">
+          Exemple illustratif : vous avez reçu une demande de justificatifs.
+          Nous repérons les pièces attendues, préparons votre réponse et notons
+          les prochaines étapes.
+        </p>
+        {[
+          {
+            q: "Quels documents préparer ?",
+            a: "Après un premier échange, je vous indique les pièces utiles. Ne les envoyez pas dans le formulaire : gardez-les pour le rendez-vous.",
+          },
+          {
+            q: "Mon dossier est incomplet : puis-je être aidé(e) ?",
+            a: "Oui. Nous identifions les pièces manquantes et les démarches pour les obtenir. La constitution complète du dossier dépend des documents disponibles et du temps convenu.",
+          },
+          {
+            q: "Et si l’administration ne répond pas ?",
+            a: "Le suivi prévu permet un point d’avancement et la préparation des prochaines étapes. Il ne garantit ni réponse ni délai et ne comprend pas de relances illimitées.",
+          },
+          {
+            q: "Puis-je organiser une intervention pour mon parent ?",
+            a: "Oui, avec son accord. Nous précisons les modalités et les informations qu’il accepte de partager avec vous.",
+          },
+        ].map(({ q, a }) => (
+          <details
+            key={q}
+            className="mt-4 rounded-2xl border border-border bg-white p-5"
+          >
+            <summary className="cursor-pointer font-bold">{q}</summary>
+            <p className="mt-3 leading-7 text-muted-foreground">{a}</p>
+          </details>
+        ))}
       </section>
       <Footer />
     </main>

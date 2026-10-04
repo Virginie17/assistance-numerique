@@ -48,7 +48,7 @@ const services = [
     emoji: "🏠",
     title: "À domicile ou à distance",
     description:
-      "Je me déplace chez vous à La Rochelle et dans un rayon de 20 km, ou j'interviens par écran partagé depuis votre canapé.",
+      "Je me déplace chez vous à La Rochelle et dans un rayon de 20 km autour de Lagord, ou j'interviens par écran partagé depuis votre canapé.",
   },
 ];
 
@@ -64,9 +64,7 @@ export default function ServicesSection() {
           <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
             Une aide numérique concrète,
             <br />
-            <span className="italic text-accent">
-              adapté à vos besoins
-            </span>
+            <span className="italic text-accent">adaptée à vos besoins</span>
           </h2>
 
           <p className="mt-4 text-lg font-light text-muted-foreground">
@@ -85,7 +83,7 @@ export default function ServicesSection() {
                 key={service.title}
                 className="group rounded-3xl border border-border bg-card p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-xl hover:shadow-primary/10"
               >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/15 bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-primary/15 bg-primary/10 text-primary transition-all duration-300 group-hover:bg-foreground group-hover:text-white">
                   <Icon className="h-6 w-6" />
                 </div>
 

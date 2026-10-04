@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/pageMetadata";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -15,22 +15,11 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { professionalGroups } from "@/lib/commercialOffers";
 
-export const metadata: Metadata = {
-  title: "Facturation électronique pour auto-entrepreneurs et artisans",
-  description:
-    "Accompagnement à la facturation électronique pour auto-entrepreneurs, artisans et petites entreprises à La Rochelle et à distance : choix d'outil, configuration, prise en main et sérénité numérique.",
-  keywords: [
-    "facturation électronique La Rochelle",
-    "aide facturation électronique auto entrepreneur",
-    "facturation électronique artisan",
-    "accompagnement logiciel facturation",
-    "assistance numérique professionnel La Rochelle",
-    "création site internet artisan La Rochelle",
-  ],
-  alternates: {
-    canonical: "/facturation-electronique",
-  },
-};
+export const metadata = pageMetadata(
+  "Facturation électronique pour auto-entrepreneurs et artisans",
+  "Accompagnement à la facturation électronique pour auto-entrepreneurs, artisans et petites entreprises à La Rochelle et à distance : choix d'outil, configuration, prise en main et sérénité numérique.",
+  "/facturation-electronique",
+);
 
 const steps = [
   {
@@ -117,9 +106,10 @@ export default function FacturationElectroniquePage() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg font-light leading-relaxed text-muted-foreground">
-              Vous êtes indépendant(e), artisan ou dirigeant(e) d’une petite entreprise ?
-              Je vous accompagne pour comprendre, choisir, paramétrer et utiliser votre solution
-              de facturation électronique, sans stress ni jargon technique.
+              Vous êtes indépendant(e), artisan ou dirigeant(e) d’une petite
+              entreprise ? Je vous accompagne pour comprendre, choisir,
+              paramétrer et utiliser votre solution de facturation électronique,
+              sans stress ni jargon technique.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -155,16 +145,23 @@ export default function FacturationElectroniquePage() {
               {installationPack.included.map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary" />
-                  <span className="text-sm font-light text-foreground">{item}</span>
+                  <span className="text-sm font-light text-foreground">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
 
             <div className="mt-8 rounded-3xl bg-secondary p-6">
-              <p className="text-sm font-light text-muted-foreground">Durée : {installationPack.duration}</p>
-              <p className="mt-1 font-serif text-5xl font-medium text-accent">{installationPack.price}</p>
+              <p className="text-sm font-light text-muted-foreground">
+                Durée : {installationPack.duration}
+              </p>
+              <p className="mt-1 font-serif text-5xl font-medium text-accent">
+                {installationPack.price}
+              </p>
               <p className="mt-2 text-sm font-light text-muted-foreground">
-                Pour repartir avec un outil configuré et savoir créer vos premiers documents.
+                Pour repartir avec un outil configuré et savoir créer vos
+                premiers documents.
               </p>
             </div>
           </div>
@@ -174,7 +171,9 @@ export default function FacturationElectroniquePage() {
       <section className="bg-card py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-14 max-w-2xl text-center">
-            <p className="mb-2 font-script text-2xl text-primary">Une méthode simple</p>
+            <p className="mb-2 font-script text-2xl text-primary">
+              Une méthode simple
+            </p>
             <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
               On avance ensemble,
               <br />
@@ -184,12 +183,19 @@ export default function FacturationElectroniquePage() {
 
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, index) => (
-              <article key={step.title} className="rounded-3xl border border-border bg-background p-6 shadow-sm">
+              <article
+                key={step.title}
+                className="rounded-3xl border border-border bg-background p-6 shadow-sm"
+              >
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 font-serif text-2xl text-primary">
                   {index + 1}
                 </div>
-                <h3 className="font-serif text-2xl font-medium text-foreground">{step.title}</h3>
-                <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">{step.text}</p>
+                <h3 className="font-serif text-2xl font-medium text-foreground">
+                  {step.title}
+                </h3>
+                <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">
+                  {step.text}
+                </p>
               </article>
             ))}
           </div>
@@ -203,7 +209,9 @@ export default function FacturationElectroniquePage() {
             <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
               Choisissez le niveau
               <br />
-              <span className="italic text-accent">d’accompagnement qui vous convient</span>
+              <span className="italic text-accent">
+                d’accompagnement qui vous convient
+              </span>
             </h2>
           </div>
 
@@ -212,57 +220,82 @@ export default function FacturationElectroniquePage() {
               const highlighted = index === 1;
 
               return (
-              <article
-                key={pack.slug}
-                className={`rounded-[2rem] border p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                  highlighted
-                    ? "border-primary bg-primary text-white shadow-primary/20"
-                    : "border-border bg-card"
-                }`}
-              >
-                {highlighted && (
-                  <div className="mb-5 inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-light uppercase tracking-widest text-white">
-                    Recommandé
-                  </div>
-                )}
-
-                <h3 className={`font-serif text-3xl font-medium ${highlighted ? "text-white" : "text-foreground"}`}>
-                  {pack.title}
-                </h3>
-                <p className={`mt-2 text-sm font-light ${highlighted ? "text-white/75" : "text-muted-foreground"}`}>
-                  {pack.duration}
-                </p>
-                <p className={`mt-6 font-serif text-5xl font-medium ${highlighted ? "text-white" : "text-accent"}`}>
-                  {pack.price}
-                </p>
-                <p className={`mt-4 text-sm font-light leading-relaxed ${highlighted ? "text-white/85" : "text-muted-foreground"}`}>
-                  {pack.summary}
-                </p>
-
-                <ul className="mt-7 space-y-3">
-                  {pack.included.map((feature) => (
-                    <li key={feature} className="flex gap-3 text-sm font-light leading-relaxed">
-                      <CheckCircle2 className={`mt-0.5 h-5 w-5 shrink-0 ${highlighted ? "text-white" : "text-primary"}`} />
-                      <span className={highlighted ? "text-white/85" : "text-muted-foreground"}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className={`mt-7 rounded-2xl p-4 text-sm leading-relaxed ${highlighted ? "bg-white/10 text-white/90" : "bg-secondary text-muted-foreground"}`}>
-                  <strong className={highlighted ? "text-white" : "text-foreground"}>Résultat :</strong>{" "}
-                  {pack.result}
-                </div>
-
-                <a
-                  href={`mailto:virginie.assistancenumerique@gmail.com?subject=${encodeURIComponent(`Demande - ${pack.title}`)}`}
-                  className={`mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors ${highlighted ? "bg-white text-primary hover:bg-white/90" : "bg-primary text-white hover:bg-accent"}`}
+                <article
+                  key={pack.slug}
+                  className={`rounded-[2rem] border p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                    highlighted
+                      ? "border-primary bg-primary text-white shadow-primary/20"
+                      : "border-border bg-card"
+                  }`}
                 >
-                  Choisir ce pack
-                  <ArrowRight className="h-4 w-4" />
-                </a>
-              </article>
+                  {highlighted && (
+                    <div className="mb-5 inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-light uppercase tracking-widest text-white">
+                      Recommandé
+                    </div>
+                  )}
+
+                  <h3
+                    className={`font-serif text-3xl font-medium ${highlighted ? "text-white" : "text-foreground"}`}
+                  >
+                    {pack.title}
+                  </h3>
+                  <p
+                    className={`mt-2 text-sm font-light ${highlighted ? "text-white/75" : "text-muted-foreground"}`}
+                  >
+                    {pack.duration}
+                  </p>
+                  <p
+                    className={`mt-6 font-serif text-5xl font-medium ${highlighted ? "text-white" : "text-accent"}`}
+                  >
+                    {pack.price}
+                  </p>
+                  <p
+                    className={`mt-4 text-sm font-light leading-relaxed ${highlighted ? "text-white/85" : "text-muted-foreground"}`}
+                  >
+                    {pack.summary}
+                  </p>
+
+                  <ul className="mt-7 space-y-3">
+                    {pack.included.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex gap-3 text-sm font-light leading-relaxed"
+                      >
+                        <CheckCircle2
+                          className={`mt-0.5 h-5 w-5 shrink-0 ${highlighted ? "text-white" : "text-primary"}`}
+                        />
+                        <span
+                          className={
+                            highlighted
+                              ? "text-white/85"
+                              : "text-muted-foreground"
+                          }
+                        >
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div
+                    className={`mt-7 rounded-2xl p-4 text-sm leading-relaxed ${highlighted ? "bg-white/10 text-white/90" : "bg-secondary text-muted-foreground"}`}
+                  >
+                    <strong
+                      className={highlighted ? "text-white" : "text-foreground"}
+                    >
+                      Résultat :
+                    </strong>{" "}
+                    {pack.result}
+                  </div>
+
+                  <a
+                    href={`mailto:virginie.assistancenumerique@gmail.com?subject=${encodeURIComponent(`Demande - ${pack.title}`)}`}
+                    className={`mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors ${highlighted ? "bg-white text-primary hover:bg-white/90" : "bg-primary text-white hover:bg-accent"}`}
+                  >
+                    Choisir ce pack
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </article>
               );
             })}
           </div>
@@ -277,10 +310,14 @@ export default function FacturationElectroniquePage() {
               <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
                 Votre activité mérite
                 <br />
-                <span className="italic text-accent">une présence en ligne claire</span>
+                <span className="italic text-accent">
+                  une présence en ligne claire
+                </span>
               </h2>
               <p className="mt-5 font-light leading-relaxed text-muted-foreground">
-                En plus de la facturation électronique, je peux vous accompagner sur d’autres besoins numériques pour développer ou simplifier votre activité.
+                En plus de la facturation électronique, je peux vous accompagner
+                sur d’autres besoins numériques pour développer ou simplifier
+                votre activité.
               </p>
             </div>
 
@@ -289,10 +326,17 @@ export default function FacturationElectroniquePage() {
                 const Icon = service.icon;
 
                 return (
-                  <article key={service.title} className="rounded-3xl border border-border bg-card p-6 shadow-sm">
+                  <article
+                    key={service.title}
+                    className="rounded-3xl border border-border bg-card p-6 shadow-sm"
+                  >
                     <Icon className="mb-4 h-8 w-8 text-primary" />
-                    <h3 className="font-serif text-xl font-medium text-foreground">{service.title}</h3>
-                    <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">{service.text}</p>
+                    <h3 className="font-serif text-xl font-medium text-foreground">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-sm font-light leading-relaxed text-muted-foreground">
+                      {service.text}
+                    </p>
                   </article>
                 );
               })}
@@ -309,7 +353,9 @@ export default function FacturationElectroniquePage() {
               Vous n’avez pas besoin de tout comprendre seul(e).
             </h2>
             <p className="mx-auto mt-4 max-w-2xl font-light leading-relaxed text-white/85">
-              Mon rôle est de rendre le numérique plus simple, plus clair et plus humain pour que vous puissiez vous concentrer sur votre métier.
+              Mon rôle est de rendre le numérique plus simple, plus clair et
+              plus humain pour que vous puissiez vous concentrer sur votre
+              métier.
             </p>
             <a
               href="#contact"
@@ -325,7 +371,9 @@ export default function FacturationElectroniquePage() {
       <section className="bg-card py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
-            <p className="mb-2 font-script text-2xl text-primary">Questions fréquentes</p>
+            <p className="mb-2 font-script text-2xl text-primary">
+              Questions fréquentes
+            </p>
             <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
               Avant de commencer
             </h2>
@@ -333,12 +381,19 @@ export default function FacturationElectroniquePage() {
 
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <article key={faq.question} className="rounded-3xl border border-border bg-background p-6">
+              <article
+                key={faq.question}
+                className="rounded-3xl border border-border bg-background p-6"
+              >
                 <div className="flex gap-3">
                   <HelpCircle className="mt-1 h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <h3 className="font-serif text-xl font-medium text-foreground">{faq.question}</h3>
-                    <p className="mt-2 text-sm font-light leading-relaxed text-muted-foreground">{faq.answer}</p>
+                    <h3 className="font-serif text-xl font-medium text-foreground">
+                      {faq.question}
+                    </h3>
+                    <p className="mt-2 text-sm font-light leading-relaxed text-muted-foreground">
+                      {faq.answer}
+                    </p>
                   </div>
                 </div>
               </article>
@@ -349,12 +404,15 @@ export default function FacturationElectroniquePage() {
 
       <section id="contact" className="py-20 lg:py-28">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="mb-2 font-script text-2xl text-primary">Parlons de votre besoin</p>
+          <p className="mb-2 font-script text-2xl text-primary">
+            Parlons de votre besoin
+          </p>
           <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
             Prêt(e) à avancer simplement ?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-light leading-relaxed text-muted-foreground">
-            Envoyez-moi un message et expliquez-moi votre situation. Je vous dirai quel accompagnement est le plus adapté.
+            Envoyez-moi un message et expliquez-moi votre situation. Je vous
+            dirai quel accompagnement est le plus adapté.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
