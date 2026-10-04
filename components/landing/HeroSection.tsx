@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Building2, Heart, MapPin } from "lucide-react";
 
 const PORTRAIT_URL = "/virginie.webp";
@@ -20,24 +21,23 @@ export default function HeroSection() {
               La Rochelle & alentours (20 km) · à distance
             </div>
 
-            <p className="mb-2 font-script text-2xl text-primary">La sérénité numérique</p>
+            <p className="mb-2 font-script text-2xl text-primary">Numérique & administratif, simplement</p>
 
             <h1 className="font-serif text-4xl font-medium leading-tight tracking-wide text-foreground sm:text-5xl lg:text-5xl">
-              Assistance numérique
+              Besoin d’aide avec vos démarches
               <br />
-              <span className="italic text-accent">pour particuliers, seniors</span>
-              <br />
-              et professionnels
+              <span className="italic text-accent">ou le numérique ?</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg font-light leading-relaxed text-muted-foreground">
-              J’accompagne les particuliers, seniors et personnes en difficulté numérique dans leur quotidien, mais aussi les artisans, auto-entrepreneurs et petites entreprises dans leurs besoins digitaux professionnels.
+              Je vous accompagne personnellement à La Rochelle et ses alentours pour simplifier vos démarches administratives, votre ordinateur, votre smartphone et vos outils numériques.
             </p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="#particuliers" className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+              <a href="/assistance-administrative-la-rochelle" className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-4 text-base text-white transition hover:bg-accent">Mes démarches administratives</a>
+              <a href="/particuliers-seniors" className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
                 <Heart className="mr-2 h-4 w-4" />
-                Je suis un particulier
+                Mon besoin numérique
               </a>
 
               <a href="#professionnels" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base font-light text-accent transition-all hover:bg-primary/10">
@@ -60,12 +60,12 @@ export default function HeroSection() {
               <div className="absolute -inset-6 rounded-full bg-gradient-to-br from-primary/15 to-transparent blur-3xl" />
 
               <div className="relative h-72 w-72 overflow-hidden rounded-full border-4 border-white shadow-2xl shadow-primary/10 sm:h-80 sm:w-80 lg:h-[420px] lg:w-[420px]">
-                <img src={PORTRAIT_URL} alt="Virginie, assistance numérique à La Rochelle" className="h-full w-full object-cover object-top" />
+                <Image src={PORTRAIT_URL} fill sizes="(min-width: 1024px) 420px, (min-width: 640px) 320px, 288px" preload alt="Virginie, assistance numérique et administrative à La Rochelle" className="h-full w-full object-cover object-top" />
               </div>
 
               <div className="absolute -bottom-6 left-1/2 w-[280px] -translate-x-1/2 rounded-3xl border border-border bg-white/95 px-6 py-5 text-center shadow-xl backdrop-blur-sm">
                 <p className="font-script text-2xl text-primary">Virginie</p>
-                <p className="mt-1 text-xs font-light uppercase tracking-[0.2em] text-muted-foreground">Assistance Numérique · La Rochelle</p>
+                <p className="mt-1 text-xs font-light uppercase tracking-[0.2em] text-muted-foreground">Numérique & administratif · La Rochelle</p>
               </div>
 
               <div className="absolute -right-2 top-6 flex h-10 w-10 items-center justify-center rounded-full border border-primary/20 bg-white text-lg text-primary shadow-md">♡</div>

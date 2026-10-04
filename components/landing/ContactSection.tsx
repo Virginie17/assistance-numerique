@@ -15,7 +15,8 @@ const clientTypeOptions = [
 
 const serviceOptions = [
   { value: "accompagnement_informatique", label: "Ordinateur & emails" },
-  { value: "demarches_administratives", label: "Démarches en ligne (impôts, CAF, Ameli…)" },
+  { value: "demarches_en_ligne", label: "Aide à une démarche en ligne" },
+  { value: "demarches_administratives", label: "Assistance administrative / dossier" },
   { value: "configuration_appareils", label: "Smartphone & tablette" },
   { value: "cybersecurite", label: "Sécurité & arnaques" },
   { value: "formation_outils", label: "Formation & autonomie" },
@@ -79,7 +80,7 @@ export default function ContactSection() {
     const selectedOffer = params.get("offre")?.trim();
     const selectedService = params.get("service")?.trim();
 
-    if (!selectedOffer) return;
+    if (!selectedOffer && !selectedService) return;
 
     const allowedService = serviceOptions.some((option) => option.value === selectedService)
       ? selectedService || "autre"
@@ -89,7 +90,7 @@ export default function ContactSection() {
       setForm((current) => ({
         ...current,
         service: allowedService,
-        message: current.message || `Bonjour Virginie, je souhaite obtenir des informations sur l’offre « ${selectedOffer} ».`,
+        message: current.message || (selectedOffer ? `Bonjour Virginie, je souhaite obtenir des informations sur l’offre « ${selectedOffer} ».` : ""),
       }));
     });
 
@@ -230,7 +231,8 @@ export default function ContactSection() {
 
               <div className="sm:col-span-2">
                 <label className="mb-2 block text-sm font-light text-foreground">Décrivez votre besoin *</label>
-                <textarea required maxLength={1500} value={form.message} onChange={(event) => handleChange("message", event.target.value)} placeholder="Expliquez-moi votre situation, en toute simplicité..." className="min-h-32 w-full rounded-2xl border border-input bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
+                <textarea required maxLength={1500} value={form.message} onChange={(event) => handleChange("message", event.target.value)} aria-describedby="message-confidentialite" placeholder="Décrivez uniquement votre besoin, sans information confidentielle." className="min-h-32 w-full rounded-2xl border border-input bg-white px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-ring" />
+                <p id="message-confidentialite" className="mt-2 text-xs leading-6 text-muted-foreground">Pour votre sécurité, ne transmettez aucun mot de passe, numéro de sécurité sociale, numéro fiscal ou document confidentiel. Nous verrons ensemble les pièces nécessaires lors de l’échange.</p>
               </div>
 
               <label className="sm:col-span-2 flex items-start gap-3 rounded-2xl border border-primary/15 bg-primary/10 p-4 text-sm font-light leading-relaxed text-foreground">

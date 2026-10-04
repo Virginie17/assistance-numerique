@@ -27,6 +27,7 @@ const allowedServices = new Set([
   "",
   "accompagnement_informatique",
   "demarches_administratives",
+  "demarches_en_ligne",
   "configuration_appareils",
   "cybersecurite",
   "formation_outils",

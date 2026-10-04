@@ -63,7 +63,7 @@ export default function DiagnosticPage() {
               </h2>
               <p className="mt-4 leading-relaxed text-[#6f6268]">
                 Ce diagnostic vous aide à comprendre ce qui vous fait perdre du temps,
-                vous stresse ou vous empêche d'être autonome avec le numérique.
+                vous stresse ou vous empêche d’être autonome avec le numérique.
               </p>
               <ul className="mt-5 space-y-3 text-[#5f5358]">
                 <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />Identifier vos blocages prioritaires.</li>
@@ -80,13 +80,13 @@ export default function DiagnosticPage() {
                 Un accompagnement local et humain
               </h2>
               <p className="mt-4 leading-relaxed text-rose-50/90">
-                J'accompagne les seniors, aidants, particuliers, artisans et entrepreneurs
+                J’accompagne les seniors, aidants, particuliers, artisans et entrepreneurs
                 à La Rochelle et alentours, à domicile ou à distance.
               </p>
               <p className="mt-5 rounded-2xl bg-white/10 p-4 text-sm leading-relaxed text-rose-50/90">
                 Vous êtes artisan ou entrepreneur ? Ce diagnostic peut vous aider à
                 comprendre pourquoi votre visibilité en ligne ne vous apporte pas assez
-                d'appels, de devis ou de clients.
+                d’appels, de devis ou de clients.
               </p>
             </div>
           </div>

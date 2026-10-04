@@ -1,5 +1,5 @@
 import { ArrowRight, Building2, Heart, Info } from "lucide-react";
-import { individualOffers, professionalOffers } from "@/lib/commercialOffers";
+import { individualOffers, administrativeOffers, professionalOffers } from "@/lib/commercialOffers";
 
 function PriceList({ offers, href, label }: { offers: typeof individualOffers; href: string; label: string }) {
   return (
@@ -25,11 +25,13 @@ export default function PricingSection() {
           <p className="mt-4 text-lg font-light leading-relaxed text-muted-foreground">Consultez les tarifs en un coup d’œil, puis ouvrez la fiche détaillée de l’accompagnement qui vous correspond.</p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-6 lg:grid-cols-3">
           <article className="rounded-3xl border border-border bg-card p-6 shadow-xl shadow-primary/10 sm:p-8">
-            <div className="flex items-center gap-4"><div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary"><Heart className="h-5 w-5" /></div><div><p className="font-script text-2xl text-primary">Particuliers & seniors</p><h3 className="font-serif text-2xl font-medium">5 accompagnements</h3></div></div>
+            <div className="flex items-center gap-4"><div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary"><Heart className="h-5 w-5" /></div><div><p className="font-script text-2xl text-primary">Numérique</p><h3 className="font-serif text-2xl font-medium">5 accompagnements</h3></div></div>
             <PriceList offers={individualOffers} href="/particuliers-seniors" label="Voir les offres particuliers" />
           </article>
+
+          <article className="rounded-3xl border border-primary/15 bg-card p-6 sm:p-8"><p className="font-script text-2xl text-primary">Administratif</p><h3 className="font-serif text-2xl">4 accompagnements</h3><PriceList offers={administrativeOffers} href="/assistance-administrative-la-rochelle" label="Voir les offres administratives" /></article>
 
           <article className="rounded-3xl border border-accent/20 bg-white p-6 shadow-xl shadow-primary/5 sm:p-8">
             <div className="flex items-center gap-4"><div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent"><Building2 className="h-5 w-5" /></div><div><p className="font-script text-2xl text-primary">Professionnels</p><h3 className="font-serif text-2xl font-medium">10 solutions</h3></div></div>

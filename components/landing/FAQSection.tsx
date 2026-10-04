@@ -3,6 +3,8 @@
 import { ChevronDown } from "lucide-react";
 
 const faqs = [
+  { question: "Pouvez-vous m’aider avec mes papiers et dossiers ?", answer: "Oui : courriers, formulaires, préparation de dossiers, classement et suivi limité à l’offre choisie. Vous fournissez les informations et validez les envois. Je ne dispense pas de conseil juridique, fiscal ou comptable." },
+  { question: "Puis-je demander de l’aide pour un parent ?", answer: "Oui, avec son accord. Nous définissons ensemble le besoin et les modalités. Les documents et informations de votre parent restent confidentiels ; aucun partage avec un proche n’est automatique." },
   {
     question: "Faut-il être « doué » en informatique pour faire appel à vous ?",
     answer:
@@ -21,7 +23,7 @@ const faqs = [
   {
     question: "Que puis-je vous demander exactement ?",
     answer:
-      "Tout ce qui touche au numérique ! Smartphone, tablette, ordinateur, emails, photos, démarches en ligne (impôts, CAF, Ameli, retraite, carte grise…), réseaux sociaux, sécurité… Si vous avez un doute ou une difficulté, je suis là pour vous aider.",
+      "Vos démarches administratives du quotidien et vos outils numériques : Smartphone, tablette, ordinateur, emails, photos, démarches en ligne (impôts, CAF, Ameli, retraite, carte grise…), réseaux sociaux, sécurité… Si vous avez un doute ou une difficulté, je suis là pour vous aider.",
   },
   {
     question: "Comment se passe une session à distance ?",

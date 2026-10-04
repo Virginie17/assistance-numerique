@@ -58,11 +58,11 @@ export default function ServicesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <p className="mb-2 font-script text-2xl text-primary">
-            Ce que je propose
+            Votre quotidien numérique
           </p>
 
           <h2 className="font-serif text-3xl font-medium text-foreground sm:text-4xl">
-            Un accompagnement complet,
+            Une aide numérique concrète,
             <br />
             <span className="italic text-accent">
               adapté à vos besoins

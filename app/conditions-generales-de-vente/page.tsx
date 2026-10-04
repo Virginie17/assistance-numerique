@@ -39,7 +39,7 @@ export default function ConditionsGeneralesDeVentePage() {
           <article>
             <h2 className="font-serif text-2xl font-medium text-foreground">2. Prestations proposées</h2>
             <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
-              Virginie Assistance Numérique propose des prestations d’aide à l’utilisation des outils numériques, d’accompagnement informatique, d’aide aux démarches en ligne, de sensibilisation à la sécurité numérique, ainsi que des prestations destinées aux professionnels : facturation électronique, organisation numérique, création ou amélioration de site internet et visibilité en ligne.
+              Virginie Assistance Numérique propose des prestations d’aide à l’utilisation des outils numériques, d’accompagnement informatique, d’assistance administrative à domicile (courriers, dossiers, classement et suivi), d’aide aux démarches en ligne, de sensibilisation à la sécurité numérique, ainsi que des prestations destinées aux professionnels : facturation électronique, organisation numérique, création ou amélioration de site internet et visibilité en ligne.
             </p>
           </article>
 
@@ -82,7 +82,7 @@ export default function ConditionsGeneralesDeVentePage() {
           <article>
             <h2 className="font-serif text-2xl font-medium text-foreground">8. Données personnelles</h2>
             <p className="mt-4 text-sm font-light leading-relaxed text-muted-foreground">
-              Les données collectées lors des échanges ou via le formulaire sont utilisées uniquement pour traiter les demandes, organiser les prestations et assurer le suivi client. Elles ne sont jamais revendues. Le client peut demander l’accès, la modification ou la suppression de ses données par email.
+              Pour l’assistance administrative, le temps inclus, le nombre de rendez-vous et la durée du suivi sont ceux de l’offre ou du devis accepté. Le client valide personnellement les déclarations et envois. Aucun délai de réponse ou accord d’un organisme n’est garanti. Les mots de passe ne sont pas conservés. Les documents restent chez le client ; toute copie nécessaire au suivi est convenue avec lui et supprimée à la fin du suivi, hors documents de facturation soumis aux obligations de conservation. Le partage avec un aidant nécessite l’accord du client. Les données collectées lors des échanges ou via le formulaire sont utilisées uniquement pour traiter les demandes, organiser les prestations et assurer le suivi client. Elles ne sont jamais revendues. Le client peut demander l’accès, la modification ou la suppression de ses données par email.
             </p>
           </article>
 

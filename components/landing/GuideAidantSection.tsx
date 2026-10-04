@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight, Download, Heart, ShieldCheck } from "lucide-react";
 
 export default function GuideAidantSection() {
@@ -24,6 +25,8 @@ export default function GuideAidantSection() {
               Téléchargez gratuitement le Guide de l’Aidant Numérique 2026 : mots de passe oubliés, SMS suspects, démarches en ligne, arnaques fréquentes… un guide simple pour aider un proche sans stress ni conflit.
             </p>
 
+            <p className="mt-4 text-sm leading-7 text-muted-foreground">Votre proche a aussi besoin d’aide pour ses papiers ? <Link href="/assistance-administrative-la-rochelle" className="font-bold text-accent underline">Découvrez l’accompagnement administratif à domicile</Link>, organisé avec son accord.</p>
+
             <div className="mt-8 grid gap-3 text-sm font-light text-muted-foreground sm:grid-cols-3">
               <div className="rounded-2xl border border-primary/15 bg-primary/10 p-4">
                 <ShieldCheck className="mb-2 h-5 w-5 text-primary" />
@@ -40,14 +43,14 @@ export default function GuideAidantSection() {
             </div>
 
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <a href="/guide-aidant-numerique" className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
+              <Link href="/guide-aidant-numerique" className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-light text-white shadow-lg shadow-primary/20 transition-all hover:bg-accent">
                 Télécharger le guide gratuit
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              </Link>
 
-              <a href="/#contact" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base font-light text-accent transition-all hover:bg-primary/10">
+              <Link href="/#contact" className="inline-flex items-center justify-center rounded-full border border-primary/30 px-8 py-4 text-base font-light text-accent transition-all hover:bg-primary/10">
                 Me contacter
-              </a>
+              </Link>
             </div>
 
             <p className="mt-5 text-sm font-light text-muted-foreground">

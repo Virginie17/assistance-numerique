@@ -190,7 +190,7 @@ export default function DiagnosticNumerique() {
               <ul className="mt-3 space-y-2 text-[#5f5358]">
                 <li className="flex gap-2"><ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />Identifier vos blocages prioritaires.</li>
                 <li className="flex gap-2"><Smartphone className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />Mettre en place des solutions simples, adaptées à votre rythme.</li>
-                <li className="flex gap-2"><Mail className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />Prévoir un échange gratuit pour définir un plan d'action concret.</li>
+                <li className="flex gap-2"><Mail className="mt-0.5 h-5 w-5 shrink-0 text-[#c9797f]" />Prévoir un échange gratuit pour définir un plan d’action concret.</li>
               </ul>
             </div>
           </div>
